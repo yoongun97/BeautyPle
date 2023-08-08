@@ -8,12 +8,11 @@ const StHeader = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
   display: flex;
   justify-content: space-between;
-  padding: 24px;
+  margin: 0 auto 0 auto;
+  padding: 20px;
   background-color: white;
-  transition: opacity 0.3 ease;
 `;
 
 const StLogo = styled.div`
@@ -26,16 +25,13 @@ const StFooter = styled.div`
   justify-content: space-between;
   padding: 24px;
   background-color: #eeeeee;
-  /* color: black; */
-  position: fixed;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
-  z-index: 1;
 `;
 
 const StContent = styled.div`
-  margin-top: 80px;
+  /* margin-top: 80px; */
 `;
 
 const StBtn = styled.button`
@@ -73,8 +69,9 @@ function Layout() {
       style={{
         minHeight: "100vh",
         position: "relative",
-        paddingBottom: "90px",
-        boxSizing: "border-box",
+        margin: "auto",
+        // paddingBottom: "90px",
+        // boxSizing: "border-box",
       }}
     >
       <StHeader style={{ opacity: headerOpacity }}>
