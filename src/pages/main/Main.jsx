@@ -1,6 +1,9 @@
 import React from "react";
 import { styled } from "styled-components";
 import Category from "../../components/category/Category";
+// import { useNavigate } from "react-router-dom";
+import { useQuery } from "react-query";
+import api from "../../axios/api";
 
 const MainImg = styled.img`
   width: 100%;
@@ -27,12 +30,42 @@ const StCardContainer = styled.div`
 const StCard = styled.div`
   border: 0.1px solid #d9d9d9;
   box-shadow: 0 2.5px 2px 0 gray;
-  height: 250px;
+  height: 350px;
   width: 200px;
   margin: 10px;
+  padding: 5px;
+`;
+const StCardImg = styled.img`
+  width: 200px;
+  height: 230px;
+`;
+const StCardInfo = styled.div``;
+const StCardTitle = styled.span`
+  font-size: 20px;
+`;
+const StCardContent = styled.p``;
+const StCardAuthor = styled.span`
+  background-color: beige;
+  margin-left: 130px;
+  /* margin-right: 10px; */
 `;
 
 function Main() {
+  // const navigate = useNavigate();
+
+  const { data, isLoading, isError, error } = useQuery("posts", async () => {
+    const response = await api.get("/posts");
+    return response.data;
+  });
+
+  if (isLoading) {
+    return <div>데이터 가져오는 중...</div>;
+  }
+
+  if (isError) {
+    return <div>{error.message}</div>;
+  }
+
   return (
     <>
       <MainImg
@@ -44,17 +77,33 @@ function Main() {
         <StMainContent>
           <StContentTitle>제품 추천</StContentTitle>
           <StCardContainer>
-            <StCard>카드</StCard>
-            <StCard>카드</StCard>
-            <StCard>카드</StCard>
-            <StCard>카드</StCard>
+            {data
+              .filter((item) => item.highcategory === "제품 추천")
+              .map((item) => (
+                <StCard>
+                  <StCardImg src={item.img} alt="MainImg" />
+                  <StCardInfo>
+                    <StCardTitle>{item.title}</StCardTitle>
+                    <StCardContent>{item.content}</StCardContent>
+                  </StCardInfo>
+                  <StCardAuthor>{item.author}</StCardAuthor>
+                </StCard>
+              ))}
           </StCardContainer>
-          <StContentTitle>꿀팁공유</StContentTitle>
+          <StContentTitle>꿀팁 공유</StContentTitle>
           <StCardContainer>
-            <StCard>카드</StCard>
-            <StCard>카드</StCard>
-            <StCard>카드</StCard>
-            <StCard>카드</StCard>
+            {data
+              .filter((item) => item.highcategory === "꿀팁 공유")
+              .map((item) => (
+                <StCard>
+                  <StCardImg src={item.img} alt="MainImg" />
+                  <StCardInfo>
+                    <StCardTitle>{item.title}</StCardTitle>
+                    <StCardContent>{item.content}</StCardContent>
+                  </StCardInfo>
+                  <StCardAuthor>{item.author}</StCardAuthor>
+                </StCard>
+              ))}
           </StCardContainer>
           <StContentTitle>Youtube</StContentTitle>
           <StCardContainer>
