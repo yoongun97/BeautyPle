@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "bamin";
+  font-weight: 50;
+  src: url("./fonts/배달의민족 연성체_윈도우용.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "melona";
+  font-weight: 50;
+  src: url("./fonts/BinggraeMelona.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "gamja";
+  font-weight: 50;
+  src: url("./fonts/GamjaFlower-Regular.ttf") format("truetype");
+}
