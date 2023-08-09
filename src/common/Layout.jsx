@@ -86,7 +86,8 @@ function Layout() {
               fontSize: "25px",
               marginRight: "10px",
               fontWeight: "bold",
-              color: "#74e2db",
+              // color: "#74e2db",
+              color: "#83925A",
             }}
           >
             뷰티플

@@ -30,6 +30,7 @@ function Tips() {
   if (isError) {
     return <div>{error.message}</div>;
   }
+  
   return (
     <>
       <StMainBody>
