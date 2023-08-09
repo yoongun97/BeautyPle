@@ -28,12 +28,8 @@ function Items() {
   let filteredData = data.filter((item) => item.highcategory === "제품 추천")
 
   if (Subcategory) {
-    filteredData = filteredData.filter((item) => item.subcategory === Subcategory);
+    filteredData = filteredData.filter((item) => item.lowcategory === Subcategory);
   }
-
-  // console.log(data)
-  // console.log(filteredData)
-  // console.log(Subcategory)
 
   if (isLoading) {
     return <div>데이터 가져오는 중...</div>;

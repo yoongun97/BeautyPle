@@ -15,13 +15,21 @@ import {
   StCardContent,
   StCardAuthor,
 } from "./StyledMain";
+import { useSelector } from "react-redux";
 function Tips() {
   const navigate = useNavigate();
+  const Subcategory = useSelector((state) => state.subCategory);
 
   const { data, isLoading, isError, error } = useQuery("posts", async () => {
     const response = await api.get("/posts");
     return response.data;
   });
+
+  let filteredData = data.filter((item) => item.highcategory === "꿀팁 공유")
+
+  if (Subcategory) {
+    filteredData = filteredData.filter((item) => item.lowcategory === Subcategory);
+  }
 
   if (isLoading) {
     return <div>데이터 가져오는 중...</div>;
@@ -38,9 +46,7 @@ function Tips() {
         <StMainContent>
           <StContentTitle>꿀팁 공유</StContentTitle>
           <StCardContainer>
-            {data
-              .filter((item) => item.highcategory === "꿀팁 공유")
-              .map((item) => (
+            {filteredData.map((item) => (
                 <StCard
                   key={item.id}
                   onClick={() => {

@@ -8,7 +8,7 @@ const subCategory = createSlice({
   reducers: {
     // 4. reducer 안에 변경함수 만들기
     setSubCategory: (state, action) => {
-        state = action.payload;
+        return action.payload
     }
   },
 });
