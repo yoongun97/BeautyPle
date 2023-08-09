@@ -31,15 +31,10 @@ function Items() {
   console.log(data)
 
   let filteredData = data
-  // = data.filter((item) => item.highcategory === "제품 추천")
 
   if (Subcategory) {
     filteredData = data.filter((item) => item.lowcategory === Subcategory);
   }
-
-  // const clearSubcategoryFilter = () => {
-  //   dispatch(setSubCategory(null)); // subCategory를 null로 설정하여 필터링 초기화
-  // };
 
   useEffect(() => {
     return () => {
