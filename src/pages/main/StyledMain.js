@@ -1,10 +1,5 @@
 import { styled } from "styled-components";
 
-export const MainImg = styled.img`
-  width: 100%;
-  height: 500px;
-`;
-
 export const StMainBody = styled.div`
   display: flex;
   /* background-color: yellow; */

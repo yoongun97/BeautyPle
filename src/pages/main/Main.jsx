@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 import api from "../../axios/api";
 import {
-  MainImg,
   StMainBody,
   StMainContent,
   StContentHeader,
@@ -36,10 +35,6 @@ function Main() {
   }
   return (
     <>
-      <MainImg
-        src="https://cdn.pixabay.com/photo/2017/05/30/19/42/cosmetic-2357981_1280.jpg"
-        alt="MainImg"
-      />
       <StMainBody>
         <Category />
         <StMainContent>

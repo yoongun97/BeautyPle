@@ -1,6 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { styled } from "styled-components";
+import { styled, keyframes } from "styled-components";
+
+const slideIn = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
+
+const slideOut = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+`;
 
 
 const StCategory = styled.div`
@@ -11,12 +29,13 @@ const StCategory = styled.div`
   height: 500px;
   display: flex;
   flex-direction: column;
-  opacity: 0.8;
+  background-color: rgba(255, 255, 255, 0.6);
   position: fixed;
   top:200px;
-  /* display: none; */
-  visibility: ${({ isvisible }) => (isvisible ? "visible" : "hidden")}; // 변경된 부분
-  transition: opacity 0.3s ease;
+  /* visibility: ${({ isvisible }) => (isvisible ? "visible" : "hidden")}; // 변경된 부분
+  transition: opacity 0.3s ease; */
+  left: ${({ isvisible }) => (isvisible ? "0" : "-200px")};
+  animation: ${({ isvisible }) => (isvisible ? slideIn : slideOut)} 0.3s ease;
 `;
 
 const StCategoryBtn = styled.button`
@@ -28,18 +47,13 @@ const StCategoryBtn = styled.button`
   padding-left: 0px;
   position: fixed;
   top:400px;
-  /* &:hover {
-    display: none;
-    + ${StCategory} {
-      display: block;
-    };
-  }; */
+  cursor:pointer;
 `;
 
 const StSelect = styled.button`
   margin: 30px auto 0px auto;
   background-color: transparent;
-  color:white;
+  color:gray;
   border: none;
   width: 100px;
   height: 50px;
@@ -68,17 +82,22 @@ const StOption = styled.button`
 
 function Category() {
   const navigate = useNavigate()
+  const [isCategoryVisible, setIsCategoryVisible] = useState(false); // 카테고리 바 표시 여부 상태 추가
+
+  const toggleCategoryVisibility = () => {
+    setIsCategoryVisible((prevVisible) => !prevVisible);
+  };
 
   return (
     <>
-      <StCategoryBtn>
+      <StCategoryBtn onClick={toggleCategoryVisibility}>
         <img
           style={{ width: "30px", height: "30px" }}
           src="https://cdn-icons-png.flaticon.com/128/2722/2722991.png"
           alt="MainImg"
         />
       </StCategoryBtn>
-      <StCategory>
+      <StCategory isvisible={isCategoryVisible}>
         <StSelect onClick={()=>{navigate("/items")}}>제품 추천</StSelect>
         <StOption> 올인원</StOption>
         <StOption> 기초화장</StOption>
