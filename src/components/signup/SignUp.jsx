@@ -7,11 +7,28 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const signupBt = async (e) => {
     e.preventDefault();
+    const emailForm = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailForm.test(email)) {
+      setErrorMessage("올바른 이메일 형식이 아닙니다.");
+      setIsError(true);
+      return;
+    }
+
+    // 비밀번호 길이 검사
+    if (password.length < 6) {
+      setErrorMessage("비밀번호는 최소 6자리 이상이어야 합니다.");
+      setIsError(true);
+      return;
+    }
+
     if (password !== passwordConfirm) {
-      alert("비밀번호가 맞지않습니다.");
+      setErrorMessage("비밀번호가 맞지 않습니다.");
+      setIsError(true);
       return;
     }
 
@@ -22,7 +39,18 @@ function SignUp() {
       navigate("/login");
     } catch (error) {
       console.error("Error signing up:", error);
-      alert("회원가입에 실패하였습니다. 다시 시도해주세요.");
+      const ErrorCode = error.response?.data;
+      console.log(ErrorCode);
+
+      const setMessage = (ErrorCode) => {
+        if (ErrorCode === "Email already exists") {
+          return "이미 존재하는 이메일입니다.";
+        } else {
+          return "회원가입에 실패하였습니다. 다시 시도해주세요.";
+        }
+      };
+      setErrorMessage(setMessage(ErrorCode));
+      setIsError(true);
     }
   };
 
@@ -91,6 +119,17 @@ function SignUp() {
               }}
             />
           </div>
+          {isError && (
+            <div
+              style={{
+                color: "red",
+                textAlign: "center",
+                marginBottom: "12px",
+              }}
+            >
+              {errorMessage}
+            </div>
+          )}
           <div style={{ width: "360px", marginBottom: "12px" }}>
             <button
               type="submit"
