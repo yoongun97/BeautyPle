@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
@@ -8,12 +8,11 @@ const StHeader = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
   display: flex;
   justify-content: space-between;
-  padding: 24px;
+  margin: 0 auto 0 auto;
+  padding: 20px;
   background-color: white;
-  transition: opacity 0.3 ease;
 `;
 
 const StLogo = styled.div`
@@ -26,16 +25,13 @@ const StFooter = styled.div`
   justify-content: space-between;
   padding: 24px;
   background-color: #eeeeee;
-  /* color: black; */
-  position: fixed;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
-  z-index: 1;
 `;
 
 const StContent = styled.div`
-  margin-top: 80px;
+  /* margin-top: 80px; */
 `;
 
 const StBtn = styled.button`
@@ -47,16 +43,19 @@ const StBtn = styled.button`
 
 function Layout() {
   const navigate = useNavigate();
-  const [headerOpacity, setHeaderOpacity] = useState(1); // 헤더 투명도 상태 추가
-  const scrollTimeoutRef = useRef(null); // 스크롤 타임아웃 참조 추가
+  const [isHeaderTransparent, setIsHeaderTransparent] = useState(true); // 헤더 투명 여부 상태 추가
 
   useEffect(() => {
     const handleScroll = () => {
-      clearTimeout(scrollTimeoutRef.current);
-      setHeaderOpacity(0.7); // 스크롤 중에는 투명도를 0.7로 설정
-      scrollTimeoutRef.current = setTimeout(() => {
-        setHeaderOpacity(1); // 스크롤이 멈추면 투명도를 1로 설정
-      }, 50);
+      const scrollTop = window.scrollY;
+      const imageHeight = 500; // 이미지의 높이
+      
+      // 이미지와 겹쳐질 때 헤더 투명도 설정
+      if (scrollTop >= imageHeight) {
+        setIsHeaderTransparent(false);
+      } else {
+        setIsHeaderTransparent(true);
+      }
     };
 
     // 스크롤 이벤트 리스너 등록
@@ -73,11 +72,10 @@ function Layout() {
       style={{
         minHeight: "100vh",
         position: "relative",
-        paddingBottom: "90px",
-        boxSizing: "border-box",
+        margin: "auto",
       }}
     >
-      <StHeader style={{ opacity: headerOpacity }}>
+      <StHeader style={{ backgroundColor: isHeaderTransparent ? "rgba(255, 255, 255, 0.1)" : "white" }}>
         <StLogo
           onClick={() => {
             navigate("/");
@@ -88,7 +86,8 @@ function Layout() {
               fontSize: "25px",
               marginRight: "10px",
               fontWeight: "bold",
-              color: "#74e2db",
+              // color: "#74e2db",
+              color: "#83925A",
             }}
           >
             뷰티플
