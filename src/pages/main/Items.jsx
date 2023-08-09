@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Category from "../../components/category/Category";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
@@ -15,21 +15,37 @@ import {
   StCardContent,
   StCardAuthor,
 } from "./StyledMain";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setSubCategory } from "../../redux/modules/postsSlice";
 function Items() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const Subcategory = useSelector((state) => state.subCategory);
 
-  const { data, isLoading, isError, error } = useQuery("posts", async () => {
-    const response = await api.get("/posts");
-    return response.data;
-  });
+  const { data, isLoading, isError, error } = useQuery(["posts", "제품 추천"], 
+    async () => {
+      const response = await api.get(`/posts?highcategory=제품 추천`);
+      return response.data;
+    });
 
-  let filteredData = data.filter((item) => item.highcategory === "제품 추천")
+  console.log(data)
+
+  let filteredData = data
+  // = data.filter((item) => item.highcategory === "제품 추천")
 
   if (Subcategory) {
-    filteredData = filteredData.filter((item) => item.lowcategory === Subcategory);
+    filteredData = data.filter((item) => item.lowcategory === Subcategory);
   }
+
+  // const clearSubcategoryFilter = () => {
+  //   dispatch(setSubCategory(null)); // subCategory를 null로 설정하여 필터링 초기화
+  // };
+
+  useEffect(() => {
+    return () => {
+      dispatch(setSubCategory(null)); // subCategory를 null로 설정하여 필터링 초기화
+    };
+  }, []);
 
   if (isLoading) {
     return <div>데이터 가져오는 중...</div>;

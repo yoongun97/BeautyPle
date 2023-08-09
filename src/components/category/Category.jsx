@@ -37,6 +37,7 @@ function Category() {
       </StCategoryBtn>
       <StCategory isvisible={isCategoryVisible}>
         <StSelect onClick={()=>{
+          dispatch(setSubCategory(null));
           navigate("/items")
           toggleCategoryVisibility()
           }}>
@@ -49,6 +50,7 @@ function Category() {
            기초화장
         </StOption>
         <StSelect onClick={()=>{
+                dispatch(setSubCategory(null));
                 navigate("/tips")
                 toggleCategoryVisibility()
               }}>꿀팁</StSelect>
