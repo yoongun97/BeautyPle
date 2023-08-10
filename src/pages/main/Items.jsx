@@ -28,8 +28,6 @@ function Items() {
       return response.data;
     });
 
-  console.log(data)
-
   let filteredData = data
 
   if (Subcategory) {
