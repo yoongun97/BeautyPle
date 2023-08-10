@@ -85,9 +85,14 @@
   "login": [],
   "users": [
     {
-      "email": "toto@naver.com",
-      "password": "$2a$10$wMUJz241funYeHgd6A1Y1.c4urrUS6W2X1Vy20h3Cdky7m0Pus2SO",
+      "email": "gogo@naver.com",
+      "password": "$2a$10$XkdzL7lB8NDju1v4cZXdmeOT/gEv7eWjwm6BZLs.VEpPidjH5D05C",
       "id": 1
+    },
+    {
+      "email": "toto@naver.com",
+      "password": "$2a$10$VC.5JT9m4SfXtEzq17lcYOHi/iG28s0mXF5WTl1TPRbk.KNT7X.AK",
+      "id": "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     }
   ],
   "tokens": []

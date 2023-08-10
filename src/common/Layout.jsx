@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
+import { setUser } from "../redux/modules/userSlice"
 
 const StHeader = styled.header`
   position: fixed;
@@ -44,6 +46,15 @@ const StBtn = styled.button`
 function Layout() {
   const navigate = useNavigate();
   const [isHeaderTransparent, setIsHeaderTransparent] = useState(true); // 헤더 투명 여부 상태 추가
+  const user = useSelector((state) => state.User);
+  const dispatch = useDispatch();
+  console.log(user)
+
+   // 로그아웃 함수
+  const logout = async () => {
+    alert("로그아웃 할까?");
+    dispatch(setUser({ email: null, id: null }));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,7 +111,24 @@ function Layout() {
             gap: "12px",
           }}
         >
+           {user.email ? (
+          <>
+            <StBtn
+            onClick={logout}
+          >
+            LogOut
+          </StBtn>
           <StBtn
+            onClick={() => {
+              navigate(`/mypage/${user.id}`);
+            }}
+          >
+            {user.email}
+          </StBtn>
+          </>
+        ) : (
+          <>
+            <StBtn
             onClick={() => {
               navigate("/login");
             }}
@@ -114,6 +142,9 @@ function Layout() {
           >
             SignUp
           </StBtn>
+          </>
+        )}
+          
         </div>
       </StHeader>
       <StContent>

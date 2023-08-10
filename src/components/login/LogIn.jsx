@@ -2,12 +2,15 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Auth from "./Auth";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/modules/userSlice";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [accessToken, setAccessToken] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const setMessage = (ErrorCode) => {
@@ -21,17 +24,18 @@ export default function Login() {
   };
   const loginBt = async (e) => {
     e.preventDefault();
-    //받아온 값이 없다. 받아온 값을 넣고 data를 넣고 따로 받아온 값이 있거나
     try {
       const response = await axios.post("http://localhost:4000/login", {
         email,
         password,
-      }); //일단 여기서 사용자의 이메일을 받아서 사용하는 것은 맞고
-      const responseData = response.data;
-      //받아온 것들 중 data 값을 가지고 새로운 변수를 만든다.
+      }); 
 
+      const responseData = response.data;
       const newAccessToken = responseData.accessToken;
-      //tokens 값을 새변수 만들고
+      console.log(responseData)
+
+      dispatch(setUser(responseData.user))
+
       setAccessToken(newAccessToken);
       alert("로그인이 되었습니다.");
       navigate("/");
@@ -42,14 +46,7 @@ export default function Login() {
     }
   };
 
-  // 확인하는 용도는 맞고 쓸모없다.
-  // useEffect(() => {
-  //   if (accessToken) {
-  //     //만약 tokens 값을 넣었을때
-  //     console.log("Access Token:", accessToken);
-  //   }
-  // }, [accessToken]);
-  //앞의 app이랑 여기 차이 다시 공부하기!
+
   return (
     <>
       <div
