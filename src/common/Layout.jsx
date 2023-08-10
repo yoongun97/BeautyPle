@@ -52,8 +52,9 @@ function Layout() {
 
    // 로그아웃 함수
   const logout = async () => {
-    alert("로그아웃 할까?");
+    alert("로그아웃 하시겠습니까?");
     dispatch(setUser({ email: null, id: null }));
+    navigate("/")
   };
 
   useEffect(() => {

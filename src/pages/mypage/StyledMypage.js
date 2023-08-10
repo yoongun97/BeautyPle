@@ -25,6 +25,7 @@ export const StListContainer = styled.div`
   background-color:#C8D1AE;
   height: 800px;
   padding:30px;
+  overflow:auto;
 `
 
 export const StCard = styled.div`
