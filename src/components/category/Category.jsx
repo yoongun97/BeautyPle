@@ -14,10 +14,10 @@ function Category() {
   };
 
   const handleSubcategorySelect1 = (subcategory) => {
-    console.log(subcategory)
     dispatch(setSubCategory(subcategory));
     toggleCategoryVisibility();
     navigate("/items")
+
   };
 
   const handleSubcategorySelect2 = (subcategory) => {

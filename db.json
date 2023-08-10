@@ -83,6 +83,12 @@
     }
   ],
   "login": [],
-  "users": [],
+  "users": [
+    {
+      "email": "toto@naver.com",
+      "password": "$2a$10$wMUJz241funYeHgd6A1Y1.c4urrUS6W2X1Vy20h3Cdky7m0Pus2SO",
+      "id": 1
+    }
+  ],
   "tokens": []
 }

@@ -25,6 +25,7 @@ function Items() {
   const { data, isLoading, isError, error } = useQuery(["posts", "제품 추천"], 
     async () => {
       const response = await api.get(`/posts?highcategory=제품 추천`);
+      console.log(response.data)
       return response.data;
     });
 

@@ -25,14 +25,14 @@ const StFooter = styled.div`
   justify-content: space-between;
   padding: 24px;
   background-color: #eeeeee;
+  position:absolute;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
 `;
 
 const StContent = styled.div`
-  /* margin-top: 80px; */
-`;
+padding-bottom: 80px;`;
 
 const StBtn = styled.button`
   background-color: transparent;
