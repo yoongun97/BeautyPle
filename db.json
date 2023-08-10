@@ -7,7 +7,8 @@
       "img": "https://cdn.pixabay.com/photo/2019/07/31/06/16/breakfast-4374418_640.jpg",
       "highcategory": "제품 추천",
       "lowcategory": "올인원",
-      "author": "작성자1"
+      "author": "작성자1",
+      "uid" : "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     },
     {
       "id": "2",
@@ -25,7 +26,9 @@
       "img": "https://cdn.pixabay.com/photo/2019/10/18/07/28/eye-shadow-4558443_640.jpg",
       "highcategory": "꿀팁 공유",
       "lowcategory": "생활 꿀팁",
-      "author": "작성자3"
+      "author": "작성자3",
+      "uid" : "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
+
     },
     {
       "id": "4",
@@ -34,7 +37,8 @@
       "img": "https://cdn.pixabay.com/photo/2019/10/18/07/28/eye-shadow-4558443_640.jpg",
       "highcategory": "꿀팁 공유",
       "lowcategory": "쇼핑 꿀팁",
-      "author": "작성자4"
+      "author": "작성자4",
+      "uid" : "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     },
     {
       "id": "5",
@@ -61,7 +65,8 @@
       "img": "https://cdn.pixabay.com/photo/2019/12/23/01/16/eyeliner-4713577_640.jpg",
       "highcategory": "제품 추천",
       "lowcategory": "기초화장",
-      "author": "작성자7"
+      "author": "작성자7",
+      "uid" : "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     },
     {
       "id": "8",
@@ -79,7 +84,8 @@
       "img": "https://cdn.pixabay.com/photo/2019/12/23/01/16/eyeliner-4713577_640.jpg",
       "highcategory": "제품 추천",
       "lowcategory": "기초화장",
-      "author": "작성자9"
+      "author": "작성자9",
+      "uid" : "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     }
   ],
   "login": [],
