@@ -17,6 +17,7 @@ import {
 } from "./StyledMain";
 import { useDispatch, useSelector } from "react-redux";
 import { setSubCategory } from "../../redux/modules/postsSlice";
+
 function Items() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -27,8 +28,6 @@ function Items() {
       const response = await api.get(`/posts?highcategory=제품 추천`);
       return response.data;
     });
-
-  console.log(data)
 
   let filteredData = data
 

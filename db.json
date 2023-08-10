@@ -83,6 +83,12 @@
     }
   ],
   "login": [],
-  "users": [],
+  "users": [
+    {
+      "email": "gogo@naver.com",
+      "password": "$2a$10$XkdzL7lB8NDju1v4cZXdmeOT/gEv7eWjwm6BZLs.VEpPidjH5D05C",
+      "id": 1
+    }
+  ],
   "tokens": []
 }
