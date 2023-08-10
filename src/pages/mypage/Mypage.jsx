@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {StSelectPost,StMyPostBtn, StMyLikeBtn, StListContainer, StCard, StTextbox, StTitle, StContent, StDeleteBtn, StDeleteImg } from "./StyledMypage"
 import { useNavigate, useParams } from "react-router-dom";
-import { useQuery } from "react-query";
+import { QueryClient, useMutation, useQuery } from "react-query";
 import api from "../../axios/api"
 
 function Mypage() {
@@ -13,6 +13,22 @@ function Mypage() {
     const response = await api.get("/posts");
     return response.data;
   });
+
+   // item 삭제 이벤트
+  const mutation = useMutation(
+    async (id) => {
+      if (window.confirm("삭제할까??")) {
+        // 데이터베이스에서 삭제
+        await api.delete(`/posts/${id}`);
+      }
+    },
+    // 데이터 삭제 후 화면 바로 변경
+    {
+      onSuccess: () => {
+        QueryClient.invalidateQueries("posts");
+      },
+    }
+  );
 
   if (isLoading) {
     return <div>데이터 가져오는 중...</div>;
@@ -35,16 +51,19 @@ function Mypage() {
       .filter((item) => item.uid === uid)
       .map((item) => (
         <StCard 
-          key={item.id}
-          onClick={() => {
-            navigate(`/detail/${item.id}`);
-          }}  
+          key={item.id} 
         >
-        <StTextbox>
+        <StTextbox
+        onClick={() => {
+          navigate(`/detail/${item.id}`);
+        }} >
           <StTitle>{item.title}</StTitle>
           <StContent>{item.content}</StContent>
         </StTextbox>
-        <StDeleteBtn>
+        <StDeleteBtn 
+          onClick={() => {
+                    mutation.mutate(item.id);
+                  }}>
           <StDeleteImg src="https://cdn-icons-png.flaticon.com/128/9789/9789276.png" alt="deletebtn" />
         </StDeleteBtn>
       </StCard>

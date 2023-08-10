@@ -8,7 +8,7 @@
       "highcategory": "제품 추천",
       "lowcategory": "올인원",
       "author": "작성자1",
-      "uid" : "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
+      "uid": "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     },
     {
       "id": "2",
@@ -20,17 +20,6 @@
       "author": "작성자2"
     },
     {
-      "id": "3",
-      "title": "제목3",
-      "content": "내용3입니다.",
-      "img": "https://cdn.pixabay.com/photo/2019/10/18/07/28/eye-shadow-4558443_640.jpg",
-      "highcategory": "꿀팁 공유",
-      "lowcategory": "생활 꿀팁",
-      "author": "작성자3",
-      "uid" : "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
-
-    },
-    {
       "id": "4",
       "title": "제목4",
       "content": "내용4입니다.",
@@ -38,7 +27,7 @@
       "highcategory": "꿀팁 공유",
       "lowcategory": "쇼핑 꿀팁",
       "author": "작성자4",
-      "uid" : "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
+      "uid": "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     },
     {
       "id": "5",
@@ -66,7 +55,7 @@
       "highcategory": "제품 추천",
       "lowcategory": "기초화장",
       "author": "작성자7",
-      "uid" : "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
+      "uid": "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     },
     {
       "id": "8",
@@ -85,7 +74,7 @@
       "highcategory": "제품 추천",
       "lowcategory": "기초화장",
       "author": "작성자9",
-      "uid" : "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
+      "uid": "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     }
   ],
   "login": [],

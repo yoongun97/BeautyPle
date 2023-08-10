@@ -34,10 +34,11 @@ width: 100%;
 margin: 10px auto 10px auto;
 display:flex;
 box-shadow: 0 2.5px 2px 0 gray;
-cursor:pointer;
 `
 export const StTextbox = styled.div`
 margin-left:30px;
+cursor:pointer;
+width: 80%;
 `
 export const StTitle = styled.h2``
 export const StContent = styled.p``
