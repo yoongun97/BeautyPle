@@ -17,7 +17,7 @@ function Mypage() {
    // item 삭제 이벤트
   const mutation = useMutation(
     async (id) => {
-      if (window.confirm("삭제할까??")) {
+      if (window.confirm("삭제하시겠습니까??")) {
         // 데이터베이스에서 삭제
         await api.delete(`/posts/${id}`);
       }

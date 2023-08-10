@@ -65,16 +65,6 @@
       "highcategory": "제품 추천",
       "lowcategory": "올인원",
       "author": "작성자8"
-    },
-    {
-      "id": "9",
-      "title": "제목9",
-      "content": "내용9입니다.",
-      "img": "https://cdn.pixabay.com/photo/2019/12/23/01/16/eyeliner-4713577_640.jpg",
-      "highcategory": "제품 추천",
-      "lowcategory": "기초화장",
-      "author": "작성자9",
-      "uid": "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     }
   ],
   "login": [],
