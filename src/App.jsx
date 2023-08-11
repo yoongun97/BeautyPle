@@ -16,22 +16,25 @@ import axios from "axios";
 function App() {
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    // JSON Server에서 사용자 정보를 가져오기
-    axios.get("http://localhost:4000/users").then(
-      (response) => {
-        const users = response.data;
-        // 여기서 users 함수를 정의하여 현재 로그인한 사용자 정보를 찾을 수 있도록 만들기
-        const currentUser = users.find((user) => user.email === user?.email);
-        setUser(currentUser);
-        //14번째 줄 user가 바뀐다. 13번째 줄이 다시실행하도록 만든다.
-      },
-      []
-      //이게 변경되면 useeffect 다시 실행된다. 이걸 다 비우면 한번만 실행되게 다시 실행되게 한다. 제가 바뀌면 다시 실행하고 계속 실행
-      //넣으면 계속 실행된다.
-    );
-  });
+  // json-server에서 현재 로그인 된 유저 정보를 가져온다. -> UUSER
 
+  useEffect(() => {
+    if (!user) {
+      // user가 바꿀때만 화면 그려주기
+      axios.get("http://localhost:4000/users").then((response) => {
+        const users = response.data;
+        const currentUser = users.find((user) => user.email === user?.email);
+        //로그인 한사람의 정보를 가져오는 방법
+        setUser(currentUser);
+      });
+    }
+  }, [user]);
+  // useEffect(() => {
+  //   axios.get("http://localhost:4000/users").then((response) => {
+  //     const currentUser = users.find((user) => user.email === user?.email);
+  //     setUser(currentUser);
+  //   }, []);
+  // });
   return (
     <Routes>
       <Route element={<Layout />}>
