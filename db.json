@@ -89,5 +89,31 @@
       "id": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa"
     }
   ],
-  "tokens": []
+  "tokens": [],
+  "likes": [
+    { "postId": "1", "uid": "1", "state": "like" },
+    {
+      "postId": "1",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "dislike"
+    },
+    { "postId": "1", "uid": "1", "state": "dislike" },
+    {
+      "postId": "1",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "like"
+    },
+    { "postId": "2", "uid": "1", "state": "like" },
+    {
+      "postId": "2",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "dislike"
+    },
+    { "postId": "2", "uid": "1", "state": "dislike" },
+    {
+      "postId": "2",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "like"
+    }
+  ]
 }

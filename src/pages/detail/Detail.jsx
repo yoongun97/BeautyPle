@@ -22,40 +22,56 @@ function Detail() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const { data, isLoading, isError, error } = useQuery(
-    ["posts", id],
-    async () => {
-      const response = await api.get(`/posts/${id}`);
-      return response.data;
-    }
-  );
+  const {
+    data: postsData,
+    isLoading: isPostsLoading,
+    isError: isPostsError,
+    error: postsError,
+  } = useQuery(["posts", id], async () => {
+    const response = await api.get(`/posts/${id}`);
+    return response.data;
+  });
 
-  if (isLoading) {
+  const {
+    data: likesData,
+    isLoading: isLikesLoading,
+    isError: isLikesError,
+    error: likesError,
+  } = useQuery(["likes", id], async () => {
+    const response = await api.get(`/likes?postId=${id}`);
+    return response.data;
+  });
+  // const likedData = likesData.filter((v) => v.state === "like");
+  // const dislikedData = likesData.filter((v) => v.state === "dislike");
+
+  if (isPostsLoading || isLikesLoading) {
     return <div>Loading...</div>;
   }
 
-  if (isError) {
-    return <div>Error: {error.message}</div>;
+  if (isPostsError || isLikesError) {
+    return (
+      <div>Error: {isPostsError ? postsError.message : likesError.message}</div>
+    );
   }
 
   return (
     <>
       <StDetailContainer>
         <StContentContainer>
-          <StDetaliImg src={data.img} alt="상세이미지" />
+          <StDetaliImg src={postsData.img} alt="상세이미지" />
 
           <StContentBox>
             <StTitleBox>
-              <StTitle>{data.title}</StTitle>
+              <StTitle>{postsData.title}</StTitle>
               <StEditBtn
                 onClick={() => {
-                  navigate(`/edit/${data.id}`);
+                  navigate(`/edit/${postsData.id}`);
                 }}
               >
                 수정
               </StEditBtn>
             </StTitleBox>
-            <StContent>{data.content}</StContent>
+            <StContent>{postsData.content}</StContent>
             <StBtnBox style={{ display: "flex" }}>
               <StLikeBtn>
                 <StLikeImg
@@ -63,14 +79,14 @@ function Detail() {
                   alt="좋아요 버튼"
                 />
               </StLikeBtn>
-              <StLikeCount>0</StLikeCount>
+              <StLikeCount>{/* {likedData.length} */}</StLikeCount>
               <StLikeBtn>
                 <StLikeImg
                   src="https://cdn-icons-png.flaticon.com/128/10694/10694446.png"
                   alt="싫어요 버튼"
                 />
               </StLikeBtn>
-              <StLikeCount>0</StLikeCount>
+              <StLikeCount>{/* {dislikedData.length} */}</StLikeCount>
             </StBtnBox>
           </StContentBox>
         </StContentContainer>
