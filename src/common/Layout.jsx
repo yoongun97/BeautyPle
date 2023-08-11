@@ -2,59 +2,20 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { styled } from "styled-components";
-import { setUser } from "../redux/modules/userSlice"
-
-const StHeader = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto 0 auto;
-  padding: 20px;
-  background-color: white;
-`;
-
-const StLogo = styled.div`
-  cursor: pointer;
-`;
-
-const StFooter = styled.div`
-  margin-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  padding: 24px;
-  background-color: #eeeeee;
-  position:absolute;
-  bottom: 0;
-  width: 100%;
-  box-sizing: border-box;
-`;
-
-const StContent = styled.div`
-padding-bottom: 80px;`;
-
-const StBtn = styled.button`
-  background-color: transparent;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-`;
+import { setUser } from "../redux/modules/userSlice";
+import { StHeader, StLogo, StFooter, StContent, StBtn } from "./StyledLayout";
 
 function Layout() {
   const navigate = useNavigate();
   const [isHeaderTransparent, setIsHeaderTransparent] = useState(true); // 헤더 투명 여부 상태 추가
   const user = useSelector((state) => state.User);
   const dispatch = useDispatch();
-  console.log(user)
 
-   // 로그아웃 함수
+  // 로그아웃 함수
   const logout = async () => {
     alert("로그아웃 하시겠습니까?");
     dispatch(setUser({ email: null, id: null }));
-    navigate("/")
+    navigate("/");
   };
 
   useEffect(() => {
@@ -118,40 +79,49 @@ function Layout() {
             gap: "12px",
           }}
         >
-           {user.email ? (
-          <>
-            <StBtn
-            onClick={logout}
-          >
-            LogOut
-          </StBtn>
-          <StBtn
-            onClick={() => {
-              navigate(`/mypage/${user.id}`);
-            }}
-          >
-            {user.email}
-          </StBtn>
-          </>
-        ) : (
-          <>
-            <StBtn
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            LogIn
-          </StBtn>
-          <StBtn
-            onClick={() => {
-              navigate("/signup");
-            }}
-          >
-            SignUp
-          </StBtn>
-          </>
-        )}
-          
+          {user.email ? (
+            <>
+              <StBtn onClick={logout}>LogOut</StBtn>
+              <StBtn
+                onClick={() => {
+                  navigate(`/mypage/${user.id}`);
+                }}
+              >
+                {user.email}
+              </StBtn>
+              <StBtn
+                onClick={() => {
+                  navigate("/create");
+                }}
+              >
+                <img
+                  style={{
+                    width: "35px",
+                    height: "35px",
+                  }}
+                  src="https://cdn-icons-png.flaticon.com/128/1159/1159633.png"
+                  alt="글 작성 버튼"
+                />
+              </StBtn>
+            </>
+          ) : (
+            <>
+              <StBtn
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                LogIn
+              </StBtn>
+              <StBtn
+                onClick={() => {
+                  navigate("/signup");
+                }}
+              >
+                SignUp
+              </StBtn>
+            </>
+          )}
         </div>
       </StHeader>
       <StContent>

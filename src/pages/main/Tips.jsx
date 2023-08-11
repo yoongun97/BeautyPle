@@ -25,14 +25,14 @@ function Tips() {
 
   const { data, isLoading, isError, error } = useQuery(["posts", "꿀팁 공유"], 
     async () => {
-      const response = await api.get(`/posts?highcategory=꿀팁 공유`);
+      const response = await api.get(`/posts?selectedUpperOption=꿀팁 공유`);
       return response.data;
     });
 
   let filteredData = data
 
   if (Subcategory) {
-    filteredData = data.filter((item) => item.lowcategory === Subcategory);
+    filteredData = data.filter((item) => item.selectedLowerOption === Subcategory);
   }
 
   useEffect(() => {

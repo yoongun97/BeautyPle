@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import uuid from "react-uuid";
+import { StSignupBox, StSignupForm, StLogo, StSignupInput, StSignupBtn, StErrorMsg } from "./StyledSignUp";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -60,116 +61,73 @@ function SignUp() {
   };
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          height: "600px",
-          alignItems: "center",
-        }}
-      >
-        <form onSubmit={signupBt}>
-          <div style={{ width: "360px", marginBottom: "12px" }}>
-            <input
-              placeholder="이메일"
-              name="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+      <StSignupBox>
+        <StSignupForm onSubmit={signupBt}>
+        <StLogo
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            <span
               style={{
-                width: "100%",
-                height: "40px",
-                fontSize: "16px",
-                borderRadius: "8px",
-                border: "1px solid lightgrey",
-                padding: "8px",
-                boxSizing: "border-box",
+                fontSize: "40px",
+                marginRight: "10px",
+                fontWeight: "bold",
+                color: "#83925A",
               }}
-            />
-          </div>
-          <div style={{ width: "360px", marginBottom: "12px" }}>
-            <input
-              placeholder="비밀번호"
-              name="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={{
-                width: "100%",
-                height: "40px",
-                fontSize: "16px",
-                borderRadius: "8px",
-                border: "1px solid lightgrey",
-                padding: "8px",
-                boxSizing: "border-box",
-              }}
-            />
-          </div>
-          <div style={{ width: "360px", marginBottom: "12px" }}>
-            <input
-              placeholder="비밀번호 확인"
-              type="password"
-              name="passwordconfirm"
-              value={passwordConfirm}
-              onChange={(e) => setPasswordConfirm(e.target.value)}
-              style={{
-                width: "100%",
-                height: "40px",
-                fontSize: "16px",
-                borderRadius: "8px",
-                border: "1px solid lightgrey",
-                padding: "8px",
-                boxSizing: "border-box",
-              }}
-            />
-          </div>
+            >
+              뷰티플
+            </span>
+            <span style={{ fontSize: "20px" }}>Beauty Platform</span>
+          </StLogo>
+          <StSignupInput
+            placeholder="이메일"
+            name="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <StSignupInput
+            placeholder="비밀번호"
+            name="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <StSignupInput
+            placeholder="비밀번호 확인"
+            style={{marginBottom:"0"}}
+            type="password"
+            name="passwordconfirm"
+            value={passwordConfirm}
+            onChange={(e) => setPasswordConfirm(e.target.value)}
+          />
           {isError && (
-            <div
-              style={{
-                color: "red",
-                textAlign: "center",
-                marginBottom: "12px",
-              }}
-            >
+            <StErrorMsg>
               {errorMessage}
-            </div>
+            </StErrorMsg>
           )}
-          <div style={{ width: "360px", marginBottom: "12px" }}>
-            <button
-              type="submit"
-              style={{
-                width: "100%",
-                border: "none",
-                padding: "12px",
-                borderRadius: "6px",
-                backgroundColor: "#FF6969",
-                color: "white",
-                cursor: "pointer",
-              }}
-            >
-              회원가입하기
-            </button>
-          </div>
-          <div style={{ width: "360px" }}>
-            <button
-              style={{
-                width: "100%",
-                border: "none",
-                padding: "12px",
-                borderRadius: "6px",
-                backgroundColor: "#78C1F3",
-                color: "white",
-                cursor: "pointer",
-              }}
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
-              로그인하러 가기
-            </button>
-          </div>
-        </form>
-      </div>
+          <StSignupBtn
+          style={{
+            backgroundColor:"#83925A",
+            marginTop:"20px",
+          }}
+            type="submit"
+          >
+            회원가입하기
+          </StSignupBtn>
+          <StSignupBtn
+            style={{
+              backgroundColor:"#C8D1AE"
+            }}
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            로그인하러 가기
+          </StSignupBtn>
+        </StSignupForm>
+      </StSignupBox>
       {/* </Container> */}
     </>
   );

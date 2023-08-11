@@ -1,19 +1,64 @@
 import React from "react";
 import { useState } from "react";
-import { styled } from "styled-components";
-import { useDispatch } from "react-redux";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import api from "../../axios/api";
-// const result = todos.filter((value) => value.id === id);
+import {
+  StEditForm,
+  StEditTitle,
+  StSelectBox,
+  DropdownWrapper,
+  DropdownHeader,
+  DropdownList,
+  DropdownItem,
+  StEditContent,
+  StFileLink,
+  StFileBox,
+  StFileBtn,
+  StEditBtn,
+} from "./StyledEdit";
+
 function Edit() {
   const { id } = useParams();
-  const { data, isLoading, isError, error } = useQuery(["posts", id], async () => {
-    const response = await api.get(`/posts/${id}`);
-    return response.data;
-  });
+
+  const { data, isLoading, isError, error } = useQuery(
+    ["posts", id],
+    async () => {
+      const response = await api.get(`/posts/${id}`);
+      return response.data;
+    }
+  );
   const [title, setTitle] = useState(data.title);
   const [content, setContent] = useState(data.content);
+
+  //셀렉트 관련 -추후수정
+  const upperOptions = ["제품추천", "꿀팁공유"];
+  const lowerOptions = {
+    제품추천: ["올인원", "기초화장"],
+    꿀팁공유: ["생활 꿀팁", "쇼핑 꿀팁"],
+  };
+
+  const [isUpperOpen, setIsUpperOpen] = useState(false);
+  const [isLowerOpen, setIsLowerOpen] = useState(false);
+  const [selectedUpperOption, setSelectedUpperOption] = useState(
+    data.selectedUpperOption
+  );
+  const [selectedLowerOption, setSelectedLowerOption] = useState(
+    data.selectedLowerOption
+  );
+
+  // select바 action
+  const handleUpperOptionClick = (option) => {
+    setSelectedUpperOption(option);
+    setSelectedLowerOption(null); // 상위 카테고리 선택 시 하위 카테고리 초기화
+    setIsUpperOpen(false);
+    setIsLowerOpen(true); // 상위 카테고리 클릭 시 하위 카테고리 열기
+  };
+  const handleLowerOptionClick = (option) => {
+    setSelectedLowerOption(option);
+    setIsLowerOpen(false); // 하위 카테고리 선택 시 상위 카테고리 닫기
+  };
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -23,154 +68,88 @@ function Edit() {
   }
 
   return (
-    <div style={{ marginTop: "80px", maxWidth: "1200px" }}>
-      <form
-        style={{
-          height: "600px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-evenly",
-        }}
+    <>
+      <StEditForm
         onSubmit={(e) => {
           setTitle(e.preventDefault());
         }}
       >
-        <div>
-          <input
-            name="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="제목"
-            style={{
-              width: "100%",
-              height: "60px",
-              fontSize: "18px",
-              borderRadius: "12px",
-              border: "1px solid lightgrey",
-              padding: "8px",
-              boxSizing: "border-box",
-            }}
-          />
-        </div>
+        <StEditTitle
+          name="title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
         <>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <select
-              style={{
-                width: "50%",
-                height: "40px",
-                fontSize: "18px",
-                borderRadius: "12px",
-                border: "1px solid lightgrey",
-                padding: "8px",
-                boxSizing: "border-box",
-              }}
-            >
-              r{" "}
-              <DropdownWrapper>
-                <DropdownHeader
-                  onClick={() => {
-                    // setIsOpen((prev) => !prev);
-                  }}
-                >
-                  {/* {selectedOption || "상위 카테고리"} */}
-                  상위카테고리
-                </DropdownHeader>
+          <StSelectBox>
+            <DropdownWrapper>
+              <DropdownHeader
+                onClick={() => {
+                  setIsUpperOpen(!isUpperOpen);
+                  setSelectedLowerOption(null);
+                }}
+              >
+                {selectedUpperOption ? selectedUpperOption : "상위 카테고리"}
                 <span>▼</span>
-              </DropdownWrapper>
-              {/* <option value="">상위 카테고리 선택</option>
-              <option value="category1">카테고리 1</option>
-              <option value="category2">카테고리 2</option>
-             */}
-            </select>
-            <span style={{ margin: "0 10px" }}>:</span>
-            <select
-              style={{
-                width: "50%",
-                height: "40px",
-                fontSize: "18px",
-                borderRadius: "12px",
-                border: "1px solid lightgrey",
-                padding: "8px",
-                boxSizing: "border-box",
-              }}
-            >
-              <option value="">하위 카테고리 선택</option>
-              <option value="subcategory1">하위 카테고리 1</option>
-              <option value="subcategory2">하위 카테고리 2</option>
-            </select>
-          </div>
+              </DropdownHeader>
+              {isUpperOpen && (
+                <DropdownList>
+                  {upperOptions.map((option) => (
+                    <DropdownItem
+                      key={option}
+                      onClick={() => {
+                        handleUpperOptionClick(option);
+                      }}
+                    >
+                      {option}
+                    </DropdownItem>
+                  ))}
+                </DropdownList>
+              )}
+            </DropdownWrapper>
+
+            <DropdownWrapper>
+              <DropdownHeader
+                onClick={() => {
+                  setSelectedLowerOption(null);
+                }}
+              >
+                {selectedLowerOption ? selectedLowerOption : "하위 카테고리"}
+                <span>▼</span>
+              </DropdownHeader>
+              {isLowerOpen && selectedUpperOption && (
+                <DropdownList>
+                  {lowerOptions[selectedUpperOption].map((option) => (
+                    <DropdownItem
+                      key={option}
+                      onClick={() => {
+                        handleLowerOptionClick(option);
+                      }}
+                    >
+                      {option}
+                    </DropdownItem>
+                  ))}
+                </DropdownList>
+              )}
+            </DropdownWrapper>
+          </StSelectBox>
         </>
-        <div
-          style={{
-            height: "400px",
-          }}
-        >
-          <textarea
-            name="content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            //changeHandler 했는데 임포트가 안돼서 Event를 붙힘
-            placeholder="내용"
-            style={{
-              resize: "none",
-              height: "100%",
-              width: "100%",
-              fontSize: "18px",
-              borderRadius: "12px",
-              border: "1px solid lightgrey",
-              padding: "12px",
-              boxSizing: "border-box",
-            }}
-          />
-        </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <input
-            type="text"
-            placeholder="파일링크"
-            style={{
-              width: "50%",
-              height: "40px",
-              fontSize: "18px",
-              borderRadius: "12px",
-              border: "1px solid lightgrey",
-              padding: "8px",
-              boxSizing: "border-box",
-            }}
-          />
-          <label
-            htmlFor="attachment"
-            style={{
-              marginLeft: "10px",
-              display: "inline-block",
-              padding: "8px 12px",
-              borderRadius: "4px",
-              backgroundColor: "olive",
-              color: "white",
-              cursor: "pointer",
-            }}
-          >
-            첨부파일
-          </label>
+
+        <StEditContent
+          name="content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          //changeHandler 했는데 임포트가 안돼서 Event를 붙힘
+        />
+
+        <StFileBox>
+          <StFileLink type="text" placeholder="파일링크" />
+          <StFileBtn htmlFor="attachment">첨부파일</StFileBtn>
           <input type="file" id="attachment" style={{ display: "none" }} />
-        </div>
-        <button
-          style={{
-            width: "100%",
-            height: "40px",
-            border: "none",
-            color: "white",
-            borderRadius: "12px",
-            backgroundColor: "olive",
-            cursor: "pointer",
-          }}
-          onClick={() => {}}
-        >
-          수정하기
-        </button>
-      </form>
-    </div>
+        </StFileBox>
+        <StEditBtn onClick={() => {}}>수정하기</StEditBtn>
+      </StEditForm>
+    </>
   );
 }
-const DropdownWrapper = styled.div``;
-const DropdownHeader = styled.div``;
+
 export default Edit;

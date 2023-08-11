@@ -24,7 +24,7 @@ function Items() {
 
   const { data, isLoading, isError, error } = useQuery(["posts", "제품 추천"], 
     async () => {
-      const response = await api.get(`/posts?highcategory=제품 추천`);
+      const response = await api.get(`/posts?selectedUpperOption=제품 추천`);
       console.log(response.data)
       return response.data;
     });
@@ -32,10 +32,11 @@ function Items() {
   let filteredData = data
 
   if (Subcategory) {
-    filteredData = data.filter((item) => item.lowcategory === Subcategory);
+    filteredData = data.filter((item) => item.selectedLowerOption === Subcategory);
   }
 
   useEffect(() => {
+    
     return () => {
       dispatch(setSubCategory(null)); // subCategory를 null로 설정하여 필터링 초기화
     };

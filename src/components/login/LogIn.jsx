@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Auth from "./Auth";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/modules/userSlice";
+import { StLoginBox, StLoginForm, StLogo, StLoginInput, StLoginBtn, StErrorMsg } from "./StyledLogIn";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -52,121 +53,67 @@ export default function Login() {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          height: "600px",
-          alignItems: "center",
-        }}
-      >
-        <form onSubmit={loginBt}>
-          <div
-            style={{
-              width: "360px",
-              marginBottom: "12px",
+      <StLoginBox>
+        <StLoginForm onSubmit={loginBt}>
+          <StLogo
+            onClick={() => {
+              navigate("/");
             }}
           >
-            <input
-              placeholder="이메일"
-              name="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+            <span
               style={{
-                width: "100%",
-                height: "40px",
-                fontSize: "16px",
-                borderRadius: "8px",
-                border: "1px solid lightgrey",
-                padding: "8px",
-                boxSizing: "border-box",
+                fontSize: "40px",
+                marginRight: "10px",
+                fontWeight: "bold",
+                // color: "#74e2db",
+                color: "#83925A",
               }}
-            />
-          </div>
-          <div
-            style={{
-              width: "360px",
-              marginBottom: "12px",
-            }}
-          >
-            <input
-              placeholder="비밀번호"
-              name="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={{
-                width: "100%",
-                height: "40px",
-                fontSize: "16px",
-                borderRadius: "8px",
-                border: "1px solid lightgrey",
-                padding: "8px",
-                boxSizing: "border-box",
-              }}
-            />
-          </div>
+            >
+              뷰티플
+            </span>
+            <span style={{ fontSize: "20px" }}>Beauty Platform</span>
+          </StLogo>
+          <StLoginInput
+            placeholder="이메일"
+            name="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}             
+          />
+          <StLoginInput
+            placeholder="비밀번호"
+            name="password"
+            type="password"
+            value={password}
+            style={{marginBottom:"0"}}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           {errorMessage && (
-            <div
-              style={{
-                color: "red",
-                textAlign: "center",
-                marginBottom: "12px",
-              }}
-            >
+            <StErrorMsg>
               {errorMessage}
-            </div>
+            </StErrorMsg>
           )}
-          <div
+          <StLoginBtn
             style={{
-              width: "360px",
-              marginBottom: "12px",
+              backgroundColor:"#83925A",
+              marginTop:"20px",
             }}
           >
-            <button
-              style={{
-                width: "100%",
-                border: "none",
-                padding: "12px",
-                borderRadius: "6px",
-                backgroundColor: "#78C1F3",
-                color: "white",
-                cursor: "pointer",
-              }}
-            >
-              로그인하기
-            </button>
-          </div>
-          {/* {accessToken && (
-            <div style={{ textAlign: "center", marginTop: "20px" }}>
-              <p>로그인된 이메일: {email}</p>
-            </div>
-          )} */}
-          <div
+            로그인하기
+          </StLoginBtn>
+  
+          <StLoginBtn
             style={{
-              width: "360px",
+              backgroundColor:"#C8D1AE"
+            }}
+            onClick={() => {
+              navigate("/signup");
             }}
           >
-            <button
-              style={{
-                width: "100%",
-                border: "none",
-                padding: "12px",
-                borderRadius: "6px",
-                backgroundColor: "#FF6969",
-                color: "white",
-                cursor: "pointer",
-              }}
-              onClick={() => {
-                navigate("/signup");
-              }}
-            >
-              회원가입하러 가기
-            </button>
-          </div>
-        </form>
-      </div>
+            회원가입하러 가기
+          </StLoginBtn>
+        </StLoginForm>
+      </StLoginBox>
       {accessToken && <Auth accessToken={accessToken} />}
       {/* 이때 들어가야 마지막에 확인이 가능하다는데 맞는지도 모르겠다. */}
     </>
