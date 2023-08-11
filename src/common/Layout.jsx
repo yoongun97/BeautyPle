@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
+import { setUser } from "../redux/modules/userSlice"
 
 const StHeader = styled.header`
   position: fixed;
@@ -25,14 +27,14 @@ const StFooter = styled.div`
   justify-content: space-between;
   padding: 24px;
   background-color: #eeeeee;
+  position:absolute;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
 `;
 
 const StContent = styled.div`
-  margin-top: 80px;
-`;
+padding-bottom: 80px;`;
 
 const StBtn = styled.button`
   background-color: transparent;
@@ -44,6 +46,16 @@ const StBtn = styled.button`
 function Layout() {
   const navigate = useNavigate();
   const [isHeaderTransparent, setIsHeaderTransparent] = useState(true); // 헤더 투명 여부 상태 추가
+  const user = useSelector((state) => state.User);
+  const dispatch = useDispatch();
+  console.log(user)
+
+   // 로그아웃 함수
+  const logout = async () => {
+    alert("로그아웃 하시겠습니까?");
+    dispatch(setUser({ email: null, id: null }));
+    navigate("/")
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,7 +118,24 @@ function Layout() {
             gap: "12px",
           }}
         >
+           {user.email ? (
+          <>
+            <StBtn
+            onClick={logout}
+          >
+            LogOut
+          </StBtn>
           <StBtn
+            onClick={() => {
+              navigate(`/mypage/${user.id}`);
+            }}
+          >
+            {user.email}
+          </StBtn>
+          </>
+        ) : (
+          <>
+            <StBtn
             onClick={() => {
               navigate("/login");
             }}
@@ -120,6 +149,9 @@ function Layout() {
           >
             SignUp
           </StBtn>
+          </>
+        )}
+          
         </div>
       </StHeader>
       <StContent>

@@ -10,34 +10,12 @@ import Layout from "./common/Layout";
 import Items from "./pages/main/Items";
 import Tips from "./pages/main/Tips";
 import MainImg from "./common/MainImg";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
 function App() {
-  const [user, setUser] = useState(null);
 
-  // json-server에서 현재 로그인 된 유저 정보를 가져온다. -> UUSER
-
-  useEffect(() => {
-    if (!user) {
-      // user가 바꿀때만 화면 그려주기
-      axios.get("http://localhost:4000/users").then((response) => {
-        const users = response.data;
-        const currentUser = users.find((user) => user.email === user?.email);
-        //로그인 한사람의 정보를 가져오는 방법
-        setUser(currentUser);
-      });
-    }
-  }, [user]);
-  // useEffect(() => {
-  //   axios.get("http://localhost:4000/users").then((response) => {
-  //     const currentUser = users.find((user) => user.email === user?.email);
-  //     setUser(currentUser);
-  //   }, []);
-  // });
   return (
     <Routes>
-      <Route element={<Layout />}>
+      <Route element={<Layout/>}>
         <Route element={<MainImg />}>
           <Route path="/" element={<Main />} />
           <Route path="/items" element={<Items />} />

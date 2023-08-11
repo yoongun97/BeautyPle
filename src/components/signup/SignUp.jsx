@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import uuid from "react-uuid";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ function SignUp() {
     }
 
     try {
-      const newUser = { email, password };
+      const newUser = { email, password, id:uuid()  };
       await axios.post("http://localhost:4000/users", newUser);
       alert("회원가입이 성공하셨습니다.");
       navigate("/login");
