@@ -33,7 +33,7 @@
       "content": "내용4입니다.",
       "img": "https://cdn.pixabay.com/photo/2019/10/18/07/28/eye-shadow-4558443_640.jpg",
       "highcategory": "꿀팁 공유",
-      "lowcategory": "구매 꿀팁",
+      "lowcategory": "쇼핑 꿀팁",
       "author": "작성자4"
     },
     {
@@ -81,5 +81,8 @@
       "lowcategory": "기초화장",
       "author": "작성자9"
     }
-  ]
+  ],
+  "login": [],
+  "users": [],
+  "tokens": []
 }
