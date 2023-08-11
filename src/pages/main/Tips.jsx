@@ -20,19 +20,23 @@ import { setSubCategory } from "../../redux/modules/postsSlice";
 
 function Tips() {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const Subcategory = useSelector((state) => state.subCategory);
 
-  const { data, isLoading, isError, error } = useQuery(["posts", "꿀팁 공유"], 
+  const { data, isLoading, isError, error } = useQuery(
+    ["posts", "꿀팁공유"],
     async () => {
-      const response = await api.get(`/posts?selectedUpperOption=꿀팁 공유`);
+      const response = await api.get(`/posts?selectedUpperOption=꿀팁공유`);
       return response.data;
-    });
+    }
+  );
 
-  let filteredData = data
+  let filteredData = data;
 
   if (Subcategory) {
-    filteredData = data.filter((item) => item.selectedLowerOption === Subcategory);
+    filteredData = data.filter(
+      (item) => item.selectedLowerOption === Subcategory
+    );
   }
 
   useEffect(() => {
@@ -48,7 +52,7 @@ function Tips() {
   if (isError) {
     return <div>{error.message}</div>;
   }
-  
+
   return (
     <>
       <StMainBody>
@@ -57,20 +61,20 @@ function Tips() {
           <StContentTitle>꿀팁 공유</StContentTitle>
           <StCardContainer>
             {filteredData.map((item) => (
-                <StCard
-                  key={item.id}
-                  onClick={() => {
-                    navigate(`/detail/${item.id}`);
-                  }}
-                >
-                  <StCardImg src={item.img} alt="MainImg" />
-                  <StCardInfo>
-                    <StCardTitle>{item.title}</StCardTitle>
-                    <StCardContent>{item.content}</StCardContent>
-                  </StCardInfo>
-                  <StCardAuthor>{item.author}</StCardAuthor>
-                </StCard>
-              ))}
+              <StCard
+                key={item.id}
+                onClick={() => {
+                  navigate(`/detail/${item.id}`);
+                }}
+              >
+                <StCardImg src={item.img} alt="MainImg" />
+                <StCardInfo>
+                  <StCardTitle>{item.title}</StCardTitle>
+                  <StCardContent>{item.content}</StCardContent>
+                </StCardInfo>
+                <StCardAuthor>{item.author}</StCardAuthor>
+              </StCard>
+            ))}
           </StCardContainer>
         </StMainContent>
       </StMainBody>

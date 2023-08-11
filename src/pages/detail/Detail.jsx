@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import api from "../../axios/api";
+import Comment from "../../components/comment/Comment";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   StBtnBox,
@@ -90,7 +91,9 @@ function Detail() {
             </StBtnBox>
           </StContentBox>
         </StContentContainer>
-        <StCommentContainer>cc</StCommentContainer>
+        <StCommentContainer>
+          <Comment />
+        </StCommentContainer>
       </StDetailContainer>
     </>
   );
