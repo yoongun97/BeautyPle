@@ -55,8 +55,6 @@ export default function Create() {
     setInputs({
       ...inputs,
       [name]: value,
-      selectedUpperOption,
-      selectedLowerOption,
     });
   };
 
@@ -74,6 +72,8 @@ export default function Create() {
   const addButton = () => {
     const newPost = {
       ...inputs,
+      selectedUpperOption,
+      selectedLowerOption,
       author: user.email,
       uid: user.id,
       id: uuid(),
@@ -125,11 +125,7 @@ export default function Create() {
           </DropdownWrapper>
 
           <DropdownWrapper>
-            <DropdownHeader
-              onClick={() => {
-                setSelectedLowerOption(null);
-              }}
-            >
+            <DropdownHeader>
               {selectedLowerOption ? selectedLowerOption : "하위 카테고리"}
               <span>▼</span>
             </DropdownHeader>

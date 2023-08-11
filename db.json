@@ -2,11 +2,11 @@
   "posts": [
     {
       "id": "1",
-      "title": "제목1",
-      "content": "내용1입니다.",
+      "title": "제목11234",
+      "content": "내용1입니다.1234",
       "img": "https://cdn.pixabay.com/photo/2019/07/31/06/16/breakfast-4374418_640.jpg",
-      "selectedUpperOption": "제품 추천",
-      "selectedLowerOption": "올인원",
+      "selectedUpperOption": "꿀팁공유",
+      "selectedLowerOption": "쇼핑 꿀팁",
       "author": "작성자1",
       "uid": "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     },
@@ -15,7 +15,7 @@
       "title": "제목2",
       "content": "내용2입니다.",
       "img": "https://cdn.pixabay.com/photo/2019/12/23/01/16/eyeliner-4713577_640.jpg",
-      "selectedUpperOption": "제품 추천",
+      "selectedUpperOption": "제품추천",
       "selectedLowerOption": "기초화장",
       "author": "작성자2"
     },
@@ -24,18 +24,18 @@
       "title": "제목4",
       "content": "내용4입니다.",
       "img": "https://cdn.pixabay.com/photo/2019/10/18/07/28/eye-shadow-4558443_640.jpg",
-      "selectedUpperOption": "꿀팁 공유",
+      "selectedUpperOption": "꿀팁공유",
       "selectedLowerOption": "쇼핑 꿀팁",
       "author": "작성자4",
       "uid": "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
     },
     {
       "id": "5",
-      "title": "제목5",
-      "content": "내용5입니다.",
+      "title": "제목529",
+      "content": "내용5입니다.29",
       "img": "https://cdn.pixabay.com/photo/2020/01/05/20/06/lipstick-4743984_640.jpg",
-      "selectedUpperOption": "제품 추천",
-      "selectedLowerOption": "올인원",
+      "selectedUpperOption": "꿀팁공유",
+      "selectedLowerOption": "쇼핑 꿀팁",
       "author": "작성자5"
     },
     {
@@ -43,7 +43,7 @@
       "title": "제목6",
       "content": "내용6입니다.",
       "img": "https://cdn.pixabay.com/photo/2019/07/31/06/16/breakfast-4374418_640.jpg",
-      "selectedUpperOption": "제품 추천",
+      "selectedUpperOption": "제품추천",
       "selectedLowerOption": "올인원",
       "author": "작성자6"
     },
@@ -52,7 +52,7 @@
       "title": "제목7",
       "content": "내용7입니다.",
       "img": "https://cdn.pixabay.com/photo/2019/12/23/01/16/eyeliner-4713577_640.jpg",
-      "selectedUpperOption": "제품 추천",
+      "selectedUpperOption": "제품추천",
       "selectedLowerOption": "기초화장",
       "author": "작성자7",
       "uid": "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
@@ -62,7 +62,7 @@
       "title": "제목8",
       "content": "내용8입니다.",
       "img": "https://cdn.pixabay.com/photo/2019/07/31/06/16/breakfast-4374418_640.jpg",
-      "selectedUpperOption": "제품 추천",
+      "selectedUpperOption": "제품추천",
       "selectedLowerOption": "올인원",
       "author": "작성자8"
     },
@@ -74,6 +74,16 @@
       "author": "gogo@naver.com",
       "uid": 1,
       "id": "306e4c13-defc-231d-ae44-9f2712a3861f"
+    },
+    {
+      "title": "test123",
+      "content": "test123",
+      "selectedUpperOption": "제품추천",
+      "selectedLowerOption": "올인원",
+      "author": "gogo@naver.com",
+      "uid": 1,
+      "id": "ea7bb79f-a05a-e4c2-42b3-9ef7efce1e26",
+      "attachment": null
     }
   ],
   "login": [],
@@ -91,25 +101,41 @@
   ],
   "tokens": [],
   "likes": [
-    { "postId": "1", "uid": "1", "state": "like" },
+    {
+      "postId": "1",
+      "uid": "1",
+      "state": "like"
+    },
     {
       "postId": "1",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
       "state": "dislike"
     },
-    { "postId": "1", "uid": "1", "state": "dislike" },
+    {
+      "postId": "1",
+      "uid": "1",
+      "state": "dislike"
+    },
     {
       "postId": "1",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
       "state": "like"
     },
-    { "postId": "2", "uid": "1", "state": "like" },
+    {
+      "postId": "2",
+      "uid": "1",
+      "state": "like"
+    },
     {
       "postId": "2",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
       "state": "dislike"
     },
-    { "postId": "2", "uid": "1", "state": "dislike" },
+    {
+      "postId": "2",
+      "uid": "1",
+      "state": "dislike"
+    },
     {
       "postId": "2",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",

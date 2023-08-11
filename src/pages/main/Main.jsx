@@ -47,9 +47,9 @@ function Main() {
               더보기
             </Link>
           </StContentHeader>
-          <StCardContainer style={{height: "380px", overflow:"hidden"}}>
+          <StCardContainer style={{ height: "380px", overflow: "hidden" }}>
             {data
-              .filter((item) => item.selectedUpperOption === "제품 추천")
+              .filter((item) => item.selectedUpperOption === "제품추천")
               .map((item) => (
                 <StCard
                   key={item.id}
@@ -74,7 +74,7 @@ function Main() {
           </StContentHeader>
           <StCardContainer>
             {data
-              .filter((item) => item.selectedUpperOption === "꿀팁 공유")
+              .filter((item) => item.selectedUpperOption === "꿀팁공유")
               .map((item) => (
                 <StCard
                   key={item.id}

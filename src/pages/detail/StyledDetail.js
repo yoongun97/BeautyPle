@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const StDetailContainer = styled.div`
-  height: 800px;
+  height: 810px;
   max-width: 1200px;
   margin: 100px auto 20px auto;
   border: 1px solid lightgray;
@@ -39,7 +39,8 @@ export const StTitle = styled.h2`
 `;
 export const StEditBtn = styled.button`
   margin-top: 25px;
-  margin-left: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   width: 150px;
   height: 50px;
   border: none;
@@ -51,7 +52,7 @@ export const StEditBtn = styled.button`
 
 export const StContent = styled.textarea`
   height: 280px;
-  width: 95%;
+  width: 90%;
   border: 1px solid lightgray;
   border-radius: 12px;
   padding: 12px;
@@ -85,7 +86,8 @@ export const StLikeCount = styled.span`
 `;
 
 export const StCommentContainer = styled.div`
-  height: 250px;
+  background-color: #808000;
+  height: 280px;
   margin: 10px;
   border: 1px solid lightgray;
   border-radius: 12px;
