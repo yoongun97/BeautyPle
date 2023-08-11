@@ -75,9 +75,13 @@
       "id": 1
     },
     {
-      "email": "toto@naver.com",
-      "password": "$2a$10$VC.5JT9m4SfXtEzq17lcYOHi/iG28s0mXF5WTl1TPRbk.KNT7X.AK",
-      "id": "5da6925d-199e-fd26-27d4-d25b5ae2fcd3"
+      "id": "9",
+      "title": "제목9",
+      "content": "내용9입니다.",
+      "img": "https://cdn.pixabay.com/photo/2019/12/23/01/16/eyeliner-4713577_640.jpg",
+      "highcategory": "제품 추천",
+      "lowcategory": "기초화장",
+      "author": "작성자9"
     }
   ],
   "tokens": []

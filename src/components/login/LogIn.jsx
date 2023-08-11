@@ -43,6 +43,9 @@ export default function Login() {
       console.error("Error logging in:", error);
       const ErrorCode = error.response?.data;
       setErrorMessage(setMessage(ErrorCode));
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 3000);
     }
   };
 

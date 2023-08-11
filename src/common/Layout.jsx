@@ -61,7 +61,7 @@ function Layout() {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const imageHeight = 500; // 이미지의 높이
-      
+
       // 이미지와 겹쳐질 때 헤더 투명도 설정
       if (scrollTop >= imageHeight) {
         setIsHeaderTransparent(false);
@@ -87,7 +87,13 @@ function Layout() {
         margin: "auto",
       }}
     >
-      <StHeader style={{ backgroundColor: isHeaderTransparent ? "rgba(255, 255, 255, 0.1)" : "white" }}>
+      <StHeader
+        style={{
+          backgroundColor: isHeaderTransparent
+            ? "rgba(255, 255, 255, 0.1)"
+            : "white",
+        }}
+      >
         <StLogo
           onClick={() => {
             navigate("/");
