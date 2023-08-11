@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMutation, useQueryClient } from "react-query";
 import api from "../../axios/api";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { styled } from "styled-components";
 import uuid from "react-uuid";
 
 export default function Create() {
-  //셀렉트 관련 -추후수정
+  //셀렉트 관련
   const upperOptions = ["제품추천", "꿀팁공유"];
   const lowerOptions = {
     제품추천: ["올인원", "기초화장"],
@@ -18,8 +18,10 @@ export default function Create() {
   const [isLowerOpen, setIsLowerOpen] = useState(false);
   const [selectedUpperOption, setSelectedUpperOption] = useState(null);
   const [selectedLowerOption, setSelectedLowerOption] = useState(null);
-
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedImages, setSelectedImages] = useState([]);
   // select바 action
+
   const handleUpperOptionClick = (option) => {
     setSelectedUpperOption(option);
     setSelectedLowerOption(null); // 상위 카테고리 선택 시 하위 카테고리 초기화
@@ -28,22 +30,22 @@ export default function Create() {
   };
   const handleLowerOptionClick = (option) => {
     setSelectedLowerOption(option);
+    //순서대로 되는게 아니고 실제로 동작할때 그냥 지멋대로 저장됨
+    //inputs. se 어쩌구로 해결할 일을 귀찮게 만듬
+    //onchange 하는 방식으로 해결하면 됨
     setInputs({
       ...inputs,
-      selectedUpperOption,
-      selectedLowerOption,
+      // selectedUpperOption,
+      // selectedLowerOption,
     });
     setIsLowerOpen(false); // 하위 카테고리 선택 시 상위 카테고리 닫기
   };
 
-  const user = useSelector((state) => state.user.user);
+  // const user = useSelector((state) => state.user.user);
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     title: "",
     content: "",
-    selectedUpperOption: "", // 상위 카테고리 선택값 추가
-
-    selectedLowerOption: "", // 하위 카테고리 선택값 추가
   });
 
   const changeHandler = (e) => {
@@ -51,6 +53,8 @@ export default function Create() {
     setInputs({
       ...inputs,
       [name]: value,
+      selectedUpperOption,
+      selectedLowerOption,
     });
   };
 
@@ -73,6 +77,7 @@ export default function Create() {
       author: "작성자",
       uid: "userid",
       id: uuid(),
+      attachment: selectedFile,
     };
     mutation.mutate(newPost);
     // navigate("/");
@@ -82,6 +87,7 @@ export default function Create() {
     <>
       <form
         style={{
+          marginTop: "100px",
           height: "600px",
           display: "flex",
           flexDirection: "column",
@@ -185,8 +191,11 @@ export default function Create() {
             }}
           />
         </div>
+
         <div style={{ display: "flex", alignItems: "center" }}>
           <input
+            //value란 걸 써서 밑에서 변경된걸 여기서 보여줘야할 필요가 있다.
+            value={selectedFile ? selectedFile.name : ""}
             type="text"
             placeholder="파일링크"
             style={{
@@ -213,7 +222,14 @@ export default function Create() {
           >
             첨부파일
           </label>
-          <input type="file" id="attachment" style={{ display: "none" }} />
+          <input
+            type="file"
+            id="attachment"
+            style={{ display: "none" }}
+            onChange={(e) => setSelectedFile(e.target.files[0])}
+          />
+          {/* onchange 실행이 될 필요가 있다. setstate로 파일을 하나 넣어줘야한다
+          setinput에 이미지 url 넣기 */}
         </div>
 
         <button
