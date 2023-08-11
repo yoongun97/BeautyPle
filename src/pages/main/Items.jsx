@@ -17,7 +17,6 @@ import {
 } from "./StyledMain";
 import { useDispatch, useSelector } from "react-redux";
 import { setSubCategory } from "../../redux/modules/postsSlice";
-
 function Items() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
