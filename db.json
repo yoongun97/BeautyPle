@@ -67,43 +67,24 @@
       "author": "작성자8"
     },
     {
-      "title": "test",
-      "content": "test",
+      "title": "test12345",
+      "content": "test12345",
       "selectedUpperOption": "제품추천",
-      "selectedLowerOption": null,
-      "author": "gogo@naver.com",
-      "uid": 1,
-      "id": "306e4c13-defc-231d-ae44-9f2712a3861f"
-    },
-    {
-      "title": "test123",
-      "content": "test123",
-      "selectedUpperOption": "제품추천",
-      "selectedLowerOption": "올인원",
+      "selectedLowerOption": "기초화장",
       "author": "gogo@naver.com",
       "uid": 1,
       "id": "ea7bb79f-a05a-e4c2-42b3-9ef7efce1e26",
       "attachment": null
     },
     {
-      "title": "",
-      "content": "",
-      "selectedUpperOption": null,
-      "selectedLowerOption": null,
-      "author": "gogo@naver.com",
-      "uid": 1,
-      "id": "1cd7c8d4-df57-bf1a-9818-db4c9b83c9c3",
-      "attachment": null
-    },
-    {
-      "title": "ttest",
-      "content": "ttest",
+      "title": "1234",
+      "content": "12345",
       "selectedUpperOption": "꿀팁공유",
       "selectedLowerOption": "생활 꿀팁",
-      "author": "toto@naver.com",
-      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
-      "id": "09af864f-34fd-0232-db8a-27151060286b",
-      "attachment": null
+      "author": "작성자",
+      "uid": "userid",
+      "id": "1c89713c-686a-6b30-6256-f73705d0174b",
+      "attachment": "2019-06-25-15-32-06-760.jpg"
     }
   ],
   "login": [],
@@ -122,6 +103,16 @@
       "email": "haha@naver.com",
       "password": "$2a$10$n4hGW3mEIvUdYzTXKQdX6e.WK7bAbgCo.UqoM1oCgB11AUUHer38.",
       "id": "3f2cc099-0432-30fc-d469-f34c17cceea0"
+    },
+    {
+      "email": "123@naver.com",
+      "password": "$2a$10$ejaL3XYDuE8.e4wKF7Fr/uLPl9f.87airPHK/KXVsPgaQ.9Q2tqvC",
+      "id": "c036c419-33b9-d5d1-2d2d-f05509755676"
+    },
+    {
+      "email": "hehe@naver.com",
+      "password": "$2a$10$N/cY7JwAJOtTsKtyFKJ6lOqtwA8U2OLRBcznzxoH.WFepHMzPxzUO",
+      "id": "09a159db-c27d-c7dc-b014-868c641ecbaa"
     }
   ],
   "tokens": [],
@@ -209,6 +200,42 @@
       "postId": "4",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
       "state": "like"
+    },
+    {
+      "id": "96d83804-b28d-f43d-2dc3-2430bc424094",
+      "postId": "6",
+      "uid": 1,
+      "state": "like"
+    },
+    {
+      "id": "037809df-6161-3b70-1ded-f6baa9bc6d78",
+      "postId": "1",
+      "uid": 1,
+      "state": "like"
+    },
+    {
+      "id": "27de6cd2-bee5-057b-6302-920481efc8e9",
+      "postId": "4",
+      "uid": 1,
+      "state": "like"
+    },
+    {
+      "id": "596323c7-5d7d-b317-f076-724e1111e74b",
+      "postId": "2",
+      "uid": 1,
+      "state": "dislike"
+    },
+    {
+      "id": "05236577-5ae6-cbd1-8603-8c39d77a2c8b",
+      "postId": "7",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "like"
+    },
+    {
+      "id": "c1fb1acd-b5fc-776e-1772-08ad0fb2b3b5",
+      "postId": "7",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "dislike"
     }
   ],
   "comments": [
@@ -225,6 +252,20 @@
       "uid": "2",
       "author": "작성자2",
       "content": "댓글2입니다."
+    },
+    {
+      "author": null,
+      "uid": null,
+      "id": "a4e28e21-843c-2909-c8e3-abcb17c17748",
+      "postId": "2",
+      "content": "ds"
+    },
+    {
+      "author": null,
+      "uid": null,
+      "id": "6e695909-dc24-00c6-ba75-7b2e531facd9",
+      "postId": "2",
+      "content": "f"
     }
   ]
 }

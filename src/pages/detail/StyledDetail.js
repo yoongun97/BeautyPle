@@ -46,9 +46,9 @@ export const StEditBtn = styled.button`
   border-radius: 12px;
   background-color: olive;
   cursor: pointer;
-  &: hover {
+  /* &: hover {
     opacity: 0.6;
-  }
+  } */
 `;
 
 export const StContent = styled.div`

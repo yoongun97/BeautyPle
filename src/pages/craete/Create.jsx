@@ -77,10 +77,21 @@ export default function Create() {
       author: user.email,
       uid: user.id,
       id: uuid(),
-      attachment: selectedFile,
+      attachment: selectedFile ? selectedFile.name : null,
     };
-    mutation.mutate(newPost);
-    navigate("/");
+
+    if (inputs.title.trim() === "") {
+      alert("제목을 입력하세요");
+    } else if (inputs.content.trim() === "") {
+      alert("내용을 입력하세요");
+    } else if (!selectedUpperOption) {
+      alert("상위 카테고리를 선택하세요");
+    } else if (!selectedLowerOption && selectedUpperOption) {
+      alert("하위 카테고리를 선택하세요");
+    } else {
+      mutation.mutate(newPost);
+      navigate("/");
+    }
   };
   //
   return (

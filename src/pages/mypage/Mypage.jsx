@@ -89,7 +89,7 @@ function Mypage() {
       <StListContainer>
         {selectedButton === "mypost"
           ? postsData
-              .filter((item) => item.uid === uid)
+              .filter((item) => item.uid == uid)
               .map((item) => (
                 <StCard key={item.id}>
                   <StTextbox
