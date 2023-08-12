@@ -17,6 +17,7 @@ import {
 } from "./StyledMain";
 import { useDispatch, useSelector } from "react-redux";
 import { setSubCategory } from "../../redux/modules/postsSlice";
+import noImage from "../../lib/logo.png";
 
 function Tips() {
   const navigate = useNavigate();
@@ -31,14 +32,6 @@ function Tips() {
     }
   );
 
-  let filteredData = data;
-
-  if (Subcategory) {
-    filteredData = data.filter(
-      (item) => item.selectedLowerOption === Subcategory
-    );
-  }
-
   useEffect(() => {
     return () => {
       dispatch(setSubCategory(null)); // subCategory를 null로 설정하여 필터링 초기화
@@ -51,6 +44,16 @@ function Tips() {
 
   if (isError) {
     return <div>{error.message}</div>;
+  }
+
+  let filteredData;
+
+  if (Subcategory) {
+    filteredData = data.filter(
+      (item) => item.selectedLowerOption === Subcategory
+    );
+  } else {
+    filteredData = data;
   }
 
   return (
@@ -67,7 +70,7 @@ function Tips() {
                   navigate(`/detail/${item.id}`);
                 }}
               >
-                <StCardImg src={item.img} alt="MainImg" />
+                <StCardImg src={item.img || noImage} alt="MainImg" />
                 <StCardInfo>
                   <StCardTitle>{item.title}</StCardTitle>
                   <StCardContent>{item.content}</StCardContent>

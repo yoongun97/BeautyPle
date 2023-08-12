@@ -17,6 +17,7 @@ import {
   StCardAuthor,
 } from "./StyledMain";
 import { Link } from "react-router-dom";
+import noImage from "../../lib/logo.png";
 
 function Main() {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ function Main() {
                     navigate(`/detail/${item.id}`);
                   }}
                 >
-                  <StCardImg src={item.img} alt="MainImg" />
+                  <StCardImg src={item.img || noImage} alt="MainImg" />
                   <StCardInfo>
                     <StCardTitle>{item.title}</StCardTitle>
                     <StCardContent>{item.content}</StCardContent>
@@ -72,7 +73,7 @@ function Main() {
               더보기
             </Link>
           </StContentHeader>
-          <StCardContainer>
+          <StCardContainer style={{ height: "380px", overflow: "hidden" }}>
             {data
               .filter((item) => item.selectedUpperOption === "꿀팁공유")
               .map((item) => (
@@ -82,7 +83,7 @@ function Main() {
                     navigate(`/detail/${item.id}`);
                   }}
                 >
-                  <StCardImg src={item.img} alt="MainImg" />
+                  <StCardImg src={item.img || noImage} alt="MainImg" />
                   <StCardInfo>
                     <StCardTitle>{item.title}</StCardTitle>
                     <StCardContent>{item.content}</StCardContent>

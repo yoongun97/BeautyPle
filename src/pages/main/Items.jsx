@@ -17,6 +17,8 @@ import {
 } from "./StyledMain";
 import { useDispatch, useSelector } from "react-redux";
 import { setSubCategory } from "../../redux/modules/postsSlice";
+import noImage from "../../lib/logo.png";
+
 function Items() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -26,18 +28,9 @@ function Items() {
     ["posts", "제품추천"],
     async () => {
       const response = await api.get(`/posts?selectedUpperOption=제품추천`);
-      console.log(response.data);
       return response.data;
     }
   );
-
-  let filteredData = data;
-
-  if (Subcategory) {
-    filteredData = data.filter(
-      (item) => item.selectedLowerOption === Subcategory
-    );
-  }
 
   useEffect(() => {
     return () => {
@@ -51,6 +44,14 @@ function Items() {
 
   if (isError) {
     return <div>{error.message}</div>;
+  }
+
+  let filteredData = data;
+
+  if (Subcategory) {
+    filteredData = data.filter(
+      (item) => item.selectedLowerOption === Subcategory
+    );
   }
 
   return (
@@ -67,7 +68,7 @@ function Items() {
                   navigate(`/detail/${item.id}`);
                 }}
               >
-                <StCardImg src={item.img} alt="MainImg" />
+                <StCardImg src={item.img || noImage} alt="MainImg" />
                 <StCardInfo>
                   <StCardTitle>{item.title}</StCardTitle>
                   <StCardContent>{item.content}</StCardContent>

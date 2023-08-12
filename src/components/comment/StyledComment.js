@@ -2,10 +2,13 @@ import { styled } from "styled-components";
 
 export const StInputBox = styled.div`
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: Center;
 `;
 
 export const StCommentInput = styled.input`
-  width: 85%;
+  width: 80%;
   height: 35px;
   border: 1px solid lightgray;
   border-radius: 12px;
@@ -13,6 +16,8 @@ export const StCommentInput = styled.input`
 
 export const StInputBtn = styled.button`
   height: 40px;
+  width: 10%;
+  overflow: hidden;
   background-color: white;
   border: 1px solid lightgray;
   border-radius: 12px;

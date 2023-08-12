@@ -26,7 +26,6 @@ export const StCardContainer = styled.div`
   flex-wrap: wrap;
   max-width: 1000px;
   width: 100%;
-  overflow: hidden;
 `;
 export const StCard = styled.div`
   border: 0.1px solid #d9d9d9;
@@ -48,6 +47,6 @@ export const StCardTitle = styled.span`
 export const StCardContent = styled.p``;
 export const StCardAuthor = styled.span`
   background-color: beige;
-  margin-left: 130px;
-  /* margin-right: 10px; */
+  margin: auto 10px 10px;
+  float: right;
 `;

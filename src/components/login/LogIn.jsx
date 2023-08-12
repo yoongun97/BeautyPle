@@ -4,7 +4,14 @@ import { useNavigate } from "react-router-dom";
 import Auth from "./Auth";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/modules/userSlice";
-import { StLoginBox, StLoginForm, StLogo, StLoginInput, StLoginBtn, StErrorMsg } from "./StyledLogIn";
+import {
+  StLoginBox,
+  StLoginForm,
+  StLogo,
+  StLoginInput,
+  StLoginBtn,
+  StErrorMsg,
+} from "./StyledLogIn";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -29,13 +36,12 @@ export default function Login() {
       const response = await axios.post("http://localhost:4000/login", {
         email,
         password,
-      }); 
+      });
 
       const responseData = response.data;
       const newAccessToken = responseData.accessToken;
-      console.log(responseData)
 
-      dispatch(setUser(responseData.user))
+      dispatch(setUser(responseData.user));
 
       setAccessToken(newAccessToken);
       alert("로그인이 되었습니다.");
@@ -49,7 +55,6 @@ export default function Login() {
       }, 3000);
     }
   };
-
 
   return (
     <>
@@ -78,33 +83,29 @@ export default function Login() {
             name="email"
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}             
+            onChange={(e) => setEmail(e.target.value)}
           />
           <StLoginInput
             placeholder="비밀번호"
             name="password"
             type="password"
             value={password}
-            style={{marginBottom:"0"}}
+            style={{ marginBottom: "0" }}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {errorMessage && (
-            <StErrorMsg>
-              {errorMessage}
-            </StErrorMsg>
-          )}
+          {errorMessage && <StErrorMsg>{errorMessage}</StErrorMsg>}
           <StLoginBtn
             style={{
-              backgroundColor:"#83925A",
-              marginTop:"20px",
+              backgroundColor: "#83925A",
+              marginTop: "20px",
             }}
           >
             로그인하기
           </StLoginBtn>
-  
+
           <StLoginBtn
             style={{
-              backgroundColor:"#C8D1AE"
+              backgroundColor: "#C8D1AE",
             }}
             onClick={() => {
               navigate("/signup");

@@ -1,4 +1,6 @@
 import React from "react";
+import { useQuery } from "react-query";
+import api from "../../axios/api";
 import {
   StComment,
   StCommentAuthor,
@@ -8,42 +10,39 @@ import {
   StInputBox,
   StInputBtn,
 } from "./StyledComment";
-
-function Comment() {
+import { useState } from "react";
+function Comment({ id }) {
+  const { data, isLoading, isError, error } = useQuery(
+    ["comments", id],
+    async () => {
+      const response = await api.get(`/comments?postId=${id}`);
+      return response.data;
+    }
+  );
+  const [comment, setComment] = useState("");
+  const changeHandler = (event) => setComment(event.target.value);
+  console.log(comment);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (isError) {
+    return <div>Error: {error.message}</div>;
+  }
   return (
     <>
       <StInputBox>
-        <StCommentInput></StCommentInput>
+        <StCommentInput type="text" onChange={changeHandler}></StCommentInput>
         <StInputBtn>댓글입력</StInputBtn>
       </StInputBox>
       <StCommentBox>
-        <StCommentCard>
-          <StComment>댓글</StComment>
-          <StCommentAuthor>작성자</StCommentAuthor>
-        </StCommentCard>
-        <StCommentCard>
-          <StComment>댓글</StComment>
-          <StCommentAuthor>작성자</StCommentAuthor>
-        </StCommentCard>
-        <StCommentCard>
-          <StComment>댓글</StComment>
-          <StCommentAuthor>작성자</StCommentAuthor>
-        </StCommentCard>
-        <StCommentCard>
-          <StComment>댓글</StComment>
-          <StCommentAuthor>작성자</StCommentAuthor>
-        </StCommentCard>
-        <StCommentCard>
-          <StComment>댓글</StComment>
-          <StCommentAuthor>작성자</StCommentAuthor>
-        </StCommentCard>
-        <StCommentCard>
-          <StComment>댓글</StComment>
-          <StCommentAuthor>작성자</StCommentAuthor>
-        </StCommentCard>
+        {data.map((comment) => (
+          <StCommentCard key={comment.id}>
+            <StComment>{comment.content}</StComment>
+            <StCommentAuthor>{comment.author}</StCommentAuthor>
+          </StCommentCard>
+        ))}
       </StCommentBox>
     </>
   );
 }
-
 export default Comment;

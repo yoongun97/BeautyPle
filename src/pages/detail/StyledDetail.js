@@ -38,9 +38,7 @@ export const StTitle = styled.h2`
   padding: 12px;
 `;
 export const StEditBtn = styled.button`
-  margin-top: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 25px 10px 10px;
   width: 150px;
   height: 50px;
   border: none;
@@ -48,9 +46,12 @@ export const StEditBtn = styled.button`
   border-radius: 12px;
   background-color: olive;
   cursor: pointer;
+  &: hover {
+    opacity: 0.6;
+  }
 `;
 
-export const StContent = styled.textarea`
+export const StContent = styled.div`
   height: 280px;
   width: 90%;
   border: 1px solid lightgray;
