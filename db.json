@@ -84,6 +84,16 @@
       "uid": 1,
       "id": "ea7bb79f-a05a-e4c2-42b3-9ef7efce1e26",
       "attachment": null
+    },
+    {
+      "title": "",
+      "content": "",
+      "selectedUpperOption": null,
+      "selectedLowerOption": null,
+      "author": "gogo@naver.com",
+      "uid": 1,
+      "id": "1cd7c8d4-df57-bf1a-9818-db4c9b83c9c3",
+      "attachment": null
     }
   ],
   "login": [],
@@ -97,49 +107,84 @@
       "email": "toto@naver.com",
       "password": "$2a$10$G6JWjT3J0ynS97BFA566SOyx86cEGmqLQbx8r689sknKO9yc7X.pW",
       "id": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa"
+    },
+    {
+      "email": "haha@naver.com",
+      "password": "$2a$10$n4hGW3mEIvUdYzTXKQdX6e.WK7bAbgCo.UqoM1oCgB11AUUHer38.",
+      "id": "3f2cc099-0432-30fc-d469-f34c17cceea0"
     }
   ],
   "tokens": [],
   "likes": [
     {
-      "postId": "1",
-      "uid": "1",
-      "state": "like"
-    },
-    {
+      "id": "2",
       "postId": "1",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
       "state": "dislike"
     },
     {
+      "id": "3",
       "postId": "1",
       "uid": "1",
       "state": "dislike"
     },
     {
+      "id": "4",
       "postId": "1",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
       "state": "like"
     },
     {
-      "postId": "2",
-      "uid": "1",
-      "state": "like"
-    },
-    {
+      "id": "6",
       "postId": "2",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
       "state": "dislike"
     },
     {
+      "id": "7",
       "postId": "2",
       "uid": "1",
       "state": "dislike"
     },
     {
-      "postId": "2",
+      "id": "bd23b8fd-cb68-756d-23a7-add7fd428297",
+      "postId": "6",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "dislike"
+    },
+    {
+      "id": "0403d43d-9819-724f-9c59-8ad1eea1fc10",
+      "postId": "2",
+      "uid": "3f2cc099-0432-30fc-d469-f34c17cceea0",
       "state": "like"
+    },
+    {
+      "id": "2776096d-8942-6ad6-6ab0-e4312002d23c",
+      "postId": "1",
+      "uid": "3f2cc099-0432-30fc-d469-f34c17cceea0",
+      "state": "like"
+    },
+    {
+      "id": "170bf7e5-6b46-fb9c-6f1b-b8ce4e3c43d1",
+      "postId": "4",
+      "uid": "3f2cc099-0432-30fc-d469-f34c17cceea0",
+      "state": "dislike"
+    }
+  ],
+  "comments": [
+    {
+      "postId": "1",
+      "Id": "1",
+      "uid": "1",
+      "author": "작성자",
+      "content": "댓글1입니다."
+    },
+    {
+      "postId": "2",
+      "Id": "2",
+      "uid": "2",
+      "author": "작성자2",
+      "content": "댓글2입니다."
     }
   ]
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "react-query";
+import { QueryClient, useMutation, useQuery } from "react-query";
 import api from "../../axios/api";
 import Comment from "../../components/comment/Comment";
 import { useParams, useNavigate } from "react-router-dom";
@@ -18,11 +18,15 @@ import {
   StTitle,
   StTitleBox,
 } from "./StyledDetail";
+import { useSelector } from "react-redux";
+import uuid from "react-uuid";
 
 function Detail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const user = useSelector((state) => state.User);
 
+  // 데이터 불러오기
   const {
     data: postsData,
     isLoading: isPostsLoading,
@@ -42,9 +46,35 @@ function Detail() {
     const response = await api.get(`/likes?postId=${id}`);
     return response.data;
   });
-  // const likedData = likesData.filter((v) => v.state === "like");
-  // const dislikedData = likesData.filter((v) => v.state === "dislike");
 
+  // 추천, 비추천 데이터 추가/삭제
+  const mutation = useMutation(
+    async (state) => {
+      if (state === "like" && likedUser) {
+        // like 삭제
+        await api.delete(`/likes/${likedUser.id}`);
+      } else if (state === "dislike" && dislikedUser) {
+        // dislike 삭제
+        await api.delete(`/likes/${dislikedUser.id}`);
+      } else {
+        const newLike = {
+          id: uuid(),
+          postId: postsData.id,
+          uid: user.id,
+          state,
+        };
+        // // 새로운 like을 데이터베이스에 추가
+        await api.post("/likes", newLike);
+      }
+    },
+    {
+      onSuccess: () => {
+        QueryClient.invalidateQueries("likes");
+      },
+    }
+  );
+
+  // isLoading, isError
   if (isPostsLoading || isLikesLoading) {
     return <div>Loading...</div>;
   }
@@ -54,6 +84,12 @@ function Detail() {
       <div>Error: {isPostsError ? postsError.message : likesError.message}</div>
     );
   }
+
+  const likedData = likesData.filter((v) => v.state === "like");
+  const dislikedData = likesData.filter((v) => v.state === "dislike");
+
+  const likedUser = likedData.find((v) => v.uid === user.id);
+  const dislikedUser = dislikedData.find((v) => v.uid === user.id);
 
   return (
     <>
@@ -66,33 +102,72 @@ function Detail() {
               <StTitle>{postsData.title}</StTitle>
               <StEditBtn
                 onClick={() => {
-                  navigate(`/edit/${postsData.id}`);
+                  if (user.email === postsData.author) {
+                    navigate(`/edit/${postsData.id}`);
+                  } else if (user.email) {
+                    alert("해당 글의 작성자가 아닙니다.");
+                  } else {
+                    alert("로그인이 필요합니다.");
+                    navigate(`/login`);
+                  }
                 }}
               >
                 수정
               </StEditBtn>
             </StTitleBox>
-            <StContent>{postsData.content}</StContent>
+            <StContent htmlFor="readOnlyField">{postsData.content}</StContent>
             <StBtnBox style={{ display: "flex" }}>
-              <StLikeBtn>
-                <StLikeImg
-                  src="https://cdn-icons-png.flaticon.com/128/2415/2415237.png"
-                  alt="좋아요 버튼"
-                />
+              <StLikeBtn
+                onClick={() => {
+                  if (user.email) {
+                    mutation.mutate("like");
+                  } else {
+                    alert("로그인이 필요합니다.");
+                    navigate(`/login`);
+                  }
+                }}
+              >
+                {!likedUser ? (
+                  <StLikeImg
+                    src="https://cdn-icons-png.flaticon.com/128/2415/2415237.png"
+                    alt="좋아요 버튼"
+                  />
+                ) : (
+                  <StLikeImg
+                    src="https://cdn-icons-png.flaticon.com/128/4477/4477657.png"
+                    alt="좋아요 버튼"
+                  />
+                )}
               </StLikeBtn>
-              <StLikeCount>{/* {likedData.length} */}</StLikeCount>
-              <StLikeBtn>
-                <StLikeImg
-                  src="https://cdn-icons-png.flaticon.com/128/10694/10694446.png"
-                  alt="싫어요 버튼"
-                />
+              <StLikeCount>{likedData.length}</StLikeCount>
+              <StLikeBtn
+                onClick={() => {
+                  if (user.email) {
+                    mutation.mutate("dislike");
+                  } else {
+                    alert("로그인이 필요합니다.");
+                    navigate(`/login`);
+                  }
+                }}
+              >
+                {!dislikedUser ? (
+                  <StLikeImg
+                    src="https://cdn-icons-png.flaticon.com/128/10694/10694446.png"
+                    alt="싫어요 버튼"
+                  />
+                ) : (
+                  <StLikeImg
+                    src="https://cdn-icons-png.flaticon.com/128/1634/1634070.png"
+                    alt="싫어요 버튼"
+                  />
+                )}
               </StLikeBtn>
-              <StLikeCount>{/* {dislikedData.length} */}</StLikeCount>
+              <StLikeCount>{dislikedData.length}</StLikeCount>
             </StBtnBox>
           </StContentBox>
         </StContentContainer>
         <StCommentContainer>
-          <Comment />
+          <Comment id={id} />
         </StCommentContainer>
       </StDetailContainer>
     </>

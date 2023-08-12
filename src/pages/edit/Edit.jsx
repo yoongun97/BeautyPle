@@ -75,7 +75,7 @@ function Edit() {
         selectedUpperOption,
         selectedLowerOption,
       };
-      api.patch(`/posts/${id}`, editedItem);
+      await api.patch(`/posts/${id}`, editedItem);
       navigate("/");
     },
     // 데이터 추가 후 화면 바로 변경
