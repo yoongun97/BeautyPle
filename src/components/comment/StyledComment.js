@@ -48,3 +48,17 @@ export const StComment = styled.p``;
 export const StCommentAuthor = styled.p`
   margin-left: auto;
 `;
+
+export const StCommentDeleteBtn = styled.button`
+  background-color: transparent;
+  border: none;
+  /* &: hover {
+    opacity: 0.4;
+  } */
+`;
+
+export const StDeleteImg = styled.img`
+  margin-top: 5px;
+  height: 20px;
+  width: 20px;
+`;

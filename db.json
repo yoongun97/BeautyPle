@@ -112,6 +112,11 @@
       "email": "haha@naver.com",
       "password": "$2a$10$n4hGW3mEIvUdYzTXKQdX6e.WK7bAbgCo.UqoM1oCgB11AUUHer38.",
       "id": "3f2cc099-0432-30fc-d469-f34c17cceea0"
+    },
+    {
+      "email": "123@naver.com",
+      "password": "$2a$10$ejaL3XYDuE8.e4wKF7Fr/uLPl9f.87airPHK/KXVsPgaQ.9Q2tqvC",
+      "id": "c036c419-33b9-d5d1-2d2d-f05509755676"
     }
   ],
   "tokens": [],
@@ -185,6 +190,20 @@
       "uid": "2",
       "author": "작성자2",
       "content": "댓글2입니다."
+    },
+    {
+      "author": null,
+      "uid": null,
+      "id": "a4e28e21-843c-2909-c8e3-abcb17c17748",
+      "postId": "2",
+      "content": "ds"
+    },
+    {
+      "author": null,
+      "uid": null,
+      "id": "6e695909-dc24-00c6-ba75-7b2e531facd9",
+      "postId": "2",
+      "content": "f"
     }
   ]
 }
