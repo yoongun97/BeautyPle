@@ -6,7 +6,9 @@ import {
   StCommentAuthor,
   StCommentBox,
   StCommentCard,
+  StCommentDeleteBtn,
   StCommentInput,
+  StDeleteImg,
   StInputBox,
   StInputBtn,
 } from "./StyledComment";
@@ -59,6 +61,19 @@ function Comment({ id }) {
     mutation.mutate(newComment);
   };
 
+  const deleteMutation = useMutation(
+    async (id) => {
+      if (window.confirm("삭제하시겠습니까??")) {
+        await api.delete(`/comments/${id}`);
+      }
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["comments", id]);
+      },
+    }
+  );
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -76,6 +91,24 @@ function Comment({ id }) {
           <StCommentCard key={comment.id}>
             <StComment>{comment.content}</StComment>
             <StCommentAuthor>{comment.author}</StCommentAuthor>
+            {comment.author === user.email ? (
+              <StCommentDeleteBtn
+                onClick={() => {
+                  if (!user) {
+                    alert("로그인 후에 댓글을 삭제할 수 있습니다.");
+                    return;
+                  }
+                  deleteMutation.mutate(comment.id);
+                }}
+              >
+                <StDeleteImg
+                  src="https://cdn-icons-png.flaticon.com/128/1617/1617543.png"
+                  alt="댓글 삭제"
+                />
+              </StCommentDeleteBtn>
+            ) : (
+              <></>
+            )}
           </StCommentCard>
         ))}
       </StCommentBox>
