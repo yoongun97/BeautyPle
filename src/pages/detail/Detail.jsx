@@ -88,8 +88,8 @@ function Detail() {
   const likedData = likesData.filter((v) => v.state === "like");
   const dislikedData = likesData.filter((v) => v.state === "dislike");
 
-  const likedUser = likedData.find((v) => (v.uid = user.id));
-  const dislikedUser = dislikedData.find((v) => (v.uid = user.id));
+  const likedUser = likedData.find((v) => v.uid === user.id);
+  const dislikedUser = dislikedData.find((v) => v.uid === user.id);
 
   return (
     <>
@@ -127,10 +127,17 @@ function Detail() {
                   }
                 }}
               >
-                <StLikeImg
-                  src="https://cdn-icons-png.flaticon.com/128/2415/2415237.png"
-                  alt="좋아요 버튼"
-                />
+                {!likedUser ? (
+                  <StLikeImg
+                    src="https://cdn-icons-png.flaticon.com/128/2415/2415237.png"
+                    alt="좋아요 버튼"
+                  />
+                ) : (
+                  <StLikeImg
+                    src="https://cdn-icons-png.flaticon.com/128/4477/4477657.png"
+                    alt="좋아요 버튼"
+                  />
+                )}
               </StLikeBtn>
               <StLikeCount>{likedData.length}</StLikeCount>
               <StLikeBtn
@@ -143,17 +150,24 @@ function Detail() {
                   }
                 }}
               >
-                <StLikeImg
-                  src="https://cdn-icons-png.flaticon.com/128/10694/10694446.png"
-                  alt="싫어요 버튼"
-                />
+                {!dislikedUser ? (
+                  <StLikeImg
+                    src="https://cdn-icons-png.flaticon.com/128/10694/10694446.png"
+                    alt="싫어요 버튼"
+                  />
+                ) : (
+                  <StLikeImg
+                    src="https://cdn-icons-png.flaticon.com/128/1634/1634070.png"
+                    alt="싫어요 버튼"
+                  />
+                )}
               </StLikeBtn>
               <StLikeCount>{dislikedData.length}</StLikeCount>
             </StBtnBox>
           </StContentBox>
         </StContentContainer>
         <StCommentContainer>
-          <Comment />
+          <Comment id={id} />
         </StCommentContainer>
       </StDetailContainer>
     </>

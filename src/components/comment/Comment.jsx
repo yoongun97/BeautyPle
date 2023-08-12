@@ -21,7 +21,6 @@ function Comment({ id }) {
   );
   const [comment, setComment] = useState("");
   const changeHandler = (event) => setComment(event.target.value);
-  console.log(comment);
   if (isLoading) {
     return <div>Loading...</div>;
   }
