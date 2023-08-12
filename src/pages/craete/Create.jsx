@@ -84,13 +84,13 @@ export default function Create() {
     };
 
     if (inputs.title.trim() === "") {
-      setTitleError("제목을 입력하세요");
+      alert("제목을 입력하세요");
     } else if (inputs.content.trim() === "") {
-      setContentError("내용을 입력하세요");
+      alert("내용을 입력하세요");
     } else if (!selectedUpperOption) {
-      setUpperCategoryError("상위 카테고리를 선택하세요");
+      alert("상위 카테고리를 선택하세요");
     } else if (!selectedLowerOption && selectedUpperOption) {
-      setLowerCategoryError("하위 카테고리를 선택하세요");
+      alert("하위 카테고리를 선택하세요");
     } else {
       mutation.mutate(newPost);
       navigate("/");
@@ -128,7 +128,6 @@ export default function Create() {
               boxSizing: "border-box",
             }}
           />
-          {titleError && <span style={{ color: "red" }}>{titleError}</span>}
         </div>
 
         <div style={{ display: "flex" }}>
@@ -183,13 +182,13 @@ export default function Create() {
             )}
           </DropdownWrapper>
         </div>
-        {!selectedUpperOption && (
+        {/* {!selectedUpperOption && (
           <span style={{ color: "red" }}>{upperCategoryError}</span>
         )}
 
         {!selectedLowerOption && selectedUpperOption && (
           <span style={{ color: "red" }}>{lowerCategoryError}</span>
-        )}
+        )} */}
 
         <div
           style={{
@@ -212,7 +211,8 @@ export default function Create() {
               boxSizing: "border-box",
             }}
           />
-          {contentError && <span style={{ color: "red" }}>{contentError}</span>}
+          {/* {titleError && <span style={{ color: "red" }}>{titleError}</span>}
+          {contentError && <span style={{ color: "red" }}>{contentError}</span>} */}
         </div>
 
         <div
