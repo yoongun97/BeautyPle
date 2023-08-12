@@ -6,11 +6,15 @@ import {
   StCommentAuthor,
   StCommentBox,
   StCommentCard,
+  StCommentDeleteBtn,
   StCommentInput,
+  StDeleteImg,
   StInputBox,
   StInputBtn,
 } from "./StyledComment";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
 function Comment({ id }) {
   const { data, isLoading, isError, error } = useQuery(
     ["comments", id],
@@ -20,6 +24,7 @@ function Comment({ id }) {
     }
   );
   const [comment, setComment] = useState("");
+  const user = useSelector((state) => state.User);
   const changeHandler = (event) => setComment(event.target.value);
   if (isLoading) {
     return <div>Loading...</div>;
@@ -38,6 +43,16 @@ function Comment({ id }) {
           <StCommentCard key={comment.id}>
             <StComment>{comment.content}</StComment>
             <StCommentAuthor>{comment.author}</StCommentAuthor>
+            {comment.author !== user.email ? (
+              <StCommentDeleteBtn>
+                <StDeleteImg
+                  src="https://cdn-icons-png.flaticon.com/128/1617/1617543.png"
+                  alt="댓글 삭제"
+                />
+              </StCommentDeleteBtn>
+            ) : (
+              <></>
+            )}
           </StCommentCard>
         ))}
       </StCommentBox>

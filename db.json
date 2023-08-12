@@ -94,6 +94,16 @@
       "uid": 1,
       "id": "1cd7c8d4-df57-bf1a-9818-db4c9b83c9c3",
       "attachment": null
+    },
+    {
+      "title": "ttest",
+      "content": "ttest",
+      "selectedUpperOption": "꿀팁공유",
+      "selectedLowerOption": "생활 꿀팁",
+      "author": "toto@naver.com",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "id": "09af864f-34fd-0232-db8a-27151060286b",
+      "attachment": null
     }
   ],
   "login": [],
@@ -169,6 +179,36 @@
       "postId": "4",
       "uid": "3f2cc099-0432-30fc-d469-f34c17cceea0",
       "state": "dislike"
+    },
+    {
+      "id": "9b916b08-9304-e6e7-adb7-4ec201ac8bbb",
+      "postId": "2",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "like"
+    },
+    {
+      "id": "00dc5a3b-2f66-00fd-846b-d5854b7f974b",
+      "postId": "6",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "like"
+    },
+    {
+      "id": "89eaf64e-dac1-6a9a-cbe3-238c026ca062",
+      "postId": "8",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "like"
+    },
+    {
+      "id": "b7cff01e-161c-ed39-badd-3ff81a428197",
+      "postId": "8",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "dislike"
+    },
+    {
+      "id": "60f09ff1-24ca-4022-8360-1467ac32a34d",
+      "postId": "4",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "like"
     }
   ],
   "comments": [
