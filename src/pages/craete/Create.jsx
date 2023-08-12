@@ -61,11 +61,11 @@ export default function Create() {
   // 추가하기 기능
   const mutation = useMutation(
     async (newPost) => {
-      await api.post("posts", newPost);
+      await api.post("comment", newPost);
     },
     {
       onSuccess: () => {
-        queryClient.invalidateQueries("posts");
+        queryClient.invalidateQueries("comment");
       },
     }
   );
@@ -74,13 +74,24 @@ export default function Create() {
       ...inputs,
       selectedUpperOption,
       selectedLowerOption,
-      author: user.email,
-      uid: user.id,
+      author: "작성자",
+      uid: "userid",
       id: uuid(),
-      attachment: selectedFile,
+      attachment: selectedFile ? selectedFile.name : null,
     };
-    mutation.mutate(newPost);
-    navigate("/");
+
+    if (inputs.title.trim() === "") {
+      alert("제목을 입력하세요");
+    } else if (inputs.content.trim() === "") {
+      alert("내용을 입력하세요");
+    } else if (!selectedUpperOption) {
+      alert("상위 카테고리를 선택하세요");
+    } else if (!selectedLowerOption && selectedUpperOption) {
+      alert("하위 카테고리를 선택하세요");
+    } else {
+      mutation.mutate(newPost);
+      navigate("/");
+    }
   };
   //
   return (

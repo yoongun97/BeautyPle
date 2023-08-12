@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "react-query";
+import { useMutation, useQuery } from "react-query";
 import api from "../../axios/api";
 import {
   StComment,
@@ -11,6 +11,10 @@ import {
   StInputBtn,
 } from "./StyledComment";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import uuid from "react-uuid";
+import { useNavigate } from "react-router-dom";
+
 function Comment({ id }) {
   const { data, isLoading, isError, error } = useQuery(
     ["comments", id],
@@ -19,8 +23,42 @@ function Comment({ id }) {
       return response.data;
     }
   );
+  const navigate = useNavigate();
   const [comment, setComment] = useState("");
+  const user = useSelector((state) => state.User);
   const changeHandler = (event) => setComment(event.target.value);
+
+  const mutation = useMutation(
+    async (newComment) => {
+      await api.post("comments", newComment);
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries("comments");
+      },
+    }
+  );
+  const addButton = () => {
+    if (!user.email) {
+      alert("로그인 후에 댓글을 작성할 수 있습니다.");
+      navigate("/login");
+      return;
+    }
+    if (!comment.trim()) {
+      alert("댓글을 쓴 뒤에 댓글입력을 누를 수 있습니다.");
+      return;
+    }
+    const newComment = {
+      author: user.email,
+      uid: user.id,
+      id: uuid(),
+      postId: id,
+      content: comment,
+    };
+
+    mutation.mutate(newComment);
+  };
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -31,7 +69,7 @@ function Comment({ id }) {
     <>
       <StInputBox>
         <StCommentInput type="text" onChange={changeHandler}></StCommentInput>
-        <StInputBtn>댓글입력</StInputBtn>
+        <StInputBtn onClick={addButton}>댓글입력</StInputBtn>
       </StInputBox>
       <StCommentBox>
         {data.map((comment) => (
