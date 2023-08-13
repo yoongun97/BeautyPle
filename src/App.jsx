@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Main from "./pages/main/Main";
 import Detail from "./pages/detail/Detail";
 import Create from "./pages/craete/Create";
@@ -6,12 +6,21 @@ import Edit from "./pages/edit/Edit";
 import Mypage from "./pages/mypage/Mypage";
 import LogIn from "./components/login/LogIn";
 import SignUp from "./components/signup/SignUp";
+import Layout from "./common/Layout";
+import Items from "./pages/main/Items";
+import Tips from "./pages/main/Tips";
+import MainImg from "./common/MainImg";
 
 function App() {
+
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Main />} />
+      <Route element={<Layout/>}>
+        <Route element={<MainImg />}>
+          <Route path="/" element={<Main />} />
+          <Route path="/items" element={<Items />} />
+          <Route path="/tips" element={<Tips />} />
+        </Route>
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/create" element={<Create />} />
         <Route path="/edit/:id" element={<Edit />} />
