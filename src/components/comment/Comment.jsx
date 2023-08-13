@@ -30,36 +30,16 @@ function Comment({ id }) {
   const user = useSelector((state) => state.User);
   const changeHandler = (event) => setComment(event.target.value);
 
-  const mutation = useMutation(
+  const addMutation = useMutation(
     async (newComment) => {
       await api.post("comments", newComment);
     },
     {
       onSuccess: () => {
-        QueryClient.invalidateQueries("comments");
+        QueryClient.invalidateQueries(["comments", id]);
       },
     }
   );
-  const addButton = () => {
-    if (!user.email) {
-      alert("로그인 후에 댓글을 작성할 수 있습니다.");
-      navigate("/login");
-      return;
-    }
-    if (!comment.trim()) {
-      alert("댓글을 쓴 뒤에 댓글입력을 누를 수 있습니다.");
-      return;
-    }
-    const newComment = {
-      author: user.email,
-      uid: user.id,
-      id: uuid(),
-      postId: id,
-      content: comment,
-    };
-
-    mutation.mutate(newComment);
-  };
 
   const deleteMutation = useMutation(
     async (id) => {
@@ -84,7 +64,29 @@ function Comment({ id }) {
     <>
       <StInputBox>
         <StCommentInput type="text" onChange={changeHandler}></StCommentInput>
-        <StInputBtn onClick={addButton}>댓글입력</StInputBtn>
+        <StInputBtn
+          onClick={() => {
+            if (!user.email) {
+              alert("로그인 후에 댓글을 작성할 수 있습니다.");
+              navigate("/login");
+              return;
+            }
+            if (!comment.trim()) {
+              alert("댓글을 쓴 뒤에 댓글입력을 누를 수 있습니다.");
+              return;
+            }
+            const newComment = {
+              author: user.email,
+              uid: user.id,
+              id: uuid(),
+              postId: id,
+              content: comment,
+            };
+            addMutation.mutate(newComment);
+          }}
+        >
+          댓글입력
+        </StInputBtn>
       </StInputBox>
       <StCommentBox>
         {data.map((comment) => (

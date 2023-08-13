@@ -22,10 +22,16 @@ import noImage from "../../lib/logo.png";
 function Main() {
   const navigate = useNavigate();
 
-  const { data, isLoading, isError, error } = useQuery("posts", async () => {
-    const response = await api.get("/posts");
-    return response.data;
-  });
+  const { data, isLoading, isError, error } = useQuery(
+    "posts",
+    async () => {
+      const response = await api.get("/posts");
+      return response.data;
+    },
+    {
+      select: (data) => data.reverse(),
+    }
+  );
 
   if (isLoading) {
     return <div>데이터 가져오는 중...</div>;

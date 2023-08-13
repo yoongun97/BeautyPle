@@ -85,6 +85,16 @@
       "uid": "userid",
       "id": "1c89713c-686a-6b30-6256-f73705d0174b",
       "attachment": "2019-06-25-15-32-06-760.jpg"
+    },
+    {
+      "title": "test1212",
+      "content": "ㅅㄷㄴㅅ1231",
+      "selectedUpperOption": "제품추천",
+      "selectedLowerOption": "올인원",
+      "author": "toto@naver.com",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "id": "ef99aa7e-a969-7951-e698-eed27d5f7131",
+      "attachment": "2021-06-29-19-29-06-347.jpg"
     }
   ],
   "login": [],
@@ -172,12 +182,6 @@
       "state": "dislike"
     },
     {
-      "id": "9b916b08-9304-e6e7-adb7-4ec201ac8bbb",
-      "postId": "2",
-      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
-      "state": "like"
-    },
-    {
       "id": "00dc5a3b-2f66-00fd-846b-d5854b7f974b",
       "postId": "6",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
@@ -236,6 +240,24 @@
       "postId": "7",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
       "state": "dislike"
+    },
+    {
+      "id": "925e322d-36d7-0abf-9e7c-af90ffcfdc01",
+      "postId": "2",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "like"
+    },
+    {
+      "id": "3200c1c6-abba-ee79-162b-51ae162efea5",
+      "postId": "ef99aa7e-a969-7951-e698-eed27d5f7131",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "dislike"
+    },
+    {
+      "id": "5d5bccb9-e3ba-a2b3-a1ea-aa8dd6519bec",
+      "postId": "ef99aa7e-a969-7951-e698-eed27d5f7131",
+      "uid": 1,
+      "state": "like"
     }
   ],
   "comments": [
@@ -266,6 +288,13 @@
       "id": "6e695909-dc24-00c6-ba75-7b2e531facd9",
       "postId": "2",
       "content": "f"
+    },
+    {
+      "author": "toto@naver.com",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "id": "e3e4eb96-34e0-5f71-dd55-929ae5fe98de",
+      "postId": "2",
+      "content": "test"
     }
   ]
 }

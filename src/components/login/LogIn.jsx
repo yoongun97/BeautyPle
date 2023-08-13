@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Auth from "./Auth";
@@ -12,6 +11,7 @@ import {
   StLoginBtn,
   StErrorMsg,
 } from "./StyledLogIn";
+import api from "../../axios/api";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -33,7 +33,7 @@ export default function Login() {
   const loginBt = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/login", {
+      const response = await api.post("/login", {
         email,
         password,
       });

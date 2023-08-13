@@ -26,10 +26,16 @@ function Mypage() {
     isLoading: isPostsLoading,
     isError: isPostsError,
     error: postsError,
-  } = useQuery("posts", async () => {
-    const response = await api.get(`/posts`);
-    return response.data;
-  });
+  } = useQuery(
+    "posts",
+    async () => {
+      const response = await api.get(`/posts`);
+      return response.data;
+    },
+    {
+      select: (data) => data.reverse(),
+    }
+  );
 
   const {
     data: likesData,

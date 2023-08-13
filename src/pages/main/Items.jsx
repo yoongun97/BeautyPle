@@ -29,6 +29,9 @@ function Items() {
     async () => {
       const response = await api.get(`/posts?selectedUpperOption=제품추천`);
       return response.data;
+    },
+    {
+      select: (data) => data.reverse(),
     }
   );
 

@@ -29,6 +29,9 @@ function Tips() {
     async () => {
       const response = await api.get(`/posts?selectedUpperOption=꿀팁공유`);
       return response.data;
+    },
+    {
+      select: (data) => data.reverse(),
     }
   );
 

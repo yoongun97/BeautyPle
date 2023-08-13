@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import uuid from "react-uuid";
-import { StSignupBox, StSignupForm, StLogo, StSignupInput, StSignupBtn, StErrorMsg } from "./StyledSignUp";
+import {
+  StSignupBox,
+  StSignupForm,
+  StLogo,
+  StSignupInput,
+  StSignupBtn,
+  StErrorMsg,
+} from "./StyledSignUp";
+import api from "../../axios/api";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -41,8 +48,8 @@ function SignUp() {
     }
 
     try {
-      const newUser = { email, password, id:uuid()  };
-      await axios.post("http://localhost:4000/users", newUser);
+      const newUser = { email, password, id: uuid() };
+      await api.post("/users", newUser);
       alert("회원가입이 성공하셨습니다.");
       navigate("/login");
     } catch (error) {
@@ -63,7 +70,7 @@ function SignUp() {
     <>
       <StSignupBox>
         <StSignupForm onSubmit={signupBt}>
-        <StLogo
+          <StLogo
             onClick={() => {
               navigate("/");
             }}
@@ -96,29 +103,25 @@ function SignUp() {
           />
           <StSignupInput
             placeholder="비밀번호 확인"
-            style={{marginBottom:"0"}}
+            style={{ marginBottom: "0" }}
             type="password"
             name="passwordconfirm"
             value={passwordConfirm}
             onChange={(e) => setPasswordConfirm(e.target.value)}
           />
-          {isError && (
-            <StErrorMsg>
-              {errorMessage}
-            </StErrorMsg>
-          )}
+          {isError && <StErrorMsg>{errorMessage}</StErrorMsg>}
           <StSignupBtn
-          style={{
-            backgroundColor:"#83925A",
-            marginTop:"20px",
-          }}
+            style={{
+              backgroundColor: "#83925A",
+              marginTop: "20px",
+            }}
             type="submit"
           >
             회원가입하기
           </StSignupBtn>
           <StSignupBtn
             style={{
-              backgroundColor:"#C8D1AE"
+              backgroundColor: "#C8D1AE",
             }}
             onClick={() => {
               navigate("/login");
