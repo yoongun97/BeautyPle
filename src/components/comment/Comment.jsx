@@ -1,5 +1,5 @@
 import React from "react";
-import { QueryClient, useMutation, useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import api from "../../axios/api";
 import {
   StComment,
@@ -29,6 +29,7 @@ function Comment({ id }) {
   const [comment, setComment] = useState("");
   const user = useSelector((state) => state.User);
   const changeHandler = (event) => setComment(event.target.value);
+  const queryClient = useQueryClient();
 
   const addMutation = useMutation(
     async (newComment) => {
@@ -36,7 +37,9 @@ function Comment({ id }) {
     },
     {
       onSuccess: () => {
-        QueryClient.invalidateQueries(["comments", id]);
+        setComment("");
+        queryClient.invalidateQueries(["comments", id]);
+        // refetchComments(); // 새로운 댓글을 불러와 화면에 반영
       },
     }
   );
@@ -49,10 +52,16 @@ function Comment({ id }) {
     },
     {
       onSuccess: () => {
-        QueryClient.invalidateQueries(["comments", id]);
+        queryClient.invalidateQueries(["comments", id]);
+        // refetchComments();
       },
     }
   );
+
+  // const refetchComments = async () => {
+  //   const response = await api.get(`/comments?postId=${id}`);
+  //   queryClient.setQueryData(["comments", id], response.data);
+  // };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -63,7 +72,11 @@ function Comment({ id }) {
   return (
     <>
       <StInputBox>
-        <StCommentInput type="text" onChange={changeHandler}></StCommentInput>
+        <StCommentInput
+          type="text"
+          value={comment}
+          onChange={changeHandler}
+        ></StCommentInput>
         <StInputBtn
           onClick={() => {
             if (!user.email) {

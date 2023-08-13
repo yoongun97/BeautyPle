@@ -1,5 +1,5 @@
 import React from "react";
-import { QueryClient, useMutation, useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import api from "../../axios/api";
 import Comment from "../../components/comment/Comment";
 import { useParams, useNavigate } from "react-router-dom";
@@ -24,6 +24,7 @@ import uuid from "react-uuid";
 function Detail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const user = useSelector((state) => state.User);
 
   // 데이터 불러오기
@@ -69,10 +70,16 @@ function Detail() {
     },
     {
       onSuccess: () => {
-        QueryClient.invalidateQueries(["likes", id]);
+        queryClient.invalidateQueries(["likes", id]);
+        // refetchLikes();
       },
     }
   );
+
+  // const refetchLikes = async () => {
+  //   const response = await api.get(`/likes?postId=${id}`);
+  //   queryClient.setQueryData(["likes", id], response.data);
+  // };
 
   // isLoading, isError
   if (isPostsLoading || isLikesLoading) {

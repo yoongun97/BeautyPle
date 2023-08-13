@@ -87,14 +87,14 @@
       "attachment": "2019-06-25-15-32-06-760.jpg"
     },
     {
-      "title": "test1212",
-      "content": "ㅅㄷㄴㅅ1231",
+      "title": "11111",
+      "content": "11111",
       "selectedUpperOption": "제품추천",
       "selectedLowerOption": "올인원",
       "author": "toto@naver.com",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
-      "id": "ef99aa7e-a969-7951-e698-eed27d5f7131",
-      "attachment": "2021-06-29-19-29-06-347.jpg"
+      "id": "a1c0477e-a802-f9c9-40de-80fc999e7e8d",
+      "attachment": "20211220_193945.jpg"
     }
   ],
   "login": [],
@@ -194,12 +194,6 @@
       "state": "like"
     },
     {
-      "id": "b7cff01e-161c-ed39-badd-3ff81a428197",
-      "postId": "8",
-      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
-      "state": "dislike"
-    },
-    {
       "id": "60f09ff1-24ca-4022-8360-1467ac32a34d",
       "postId": "4",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
@@ -248,15 +242,27 @@
       "state": "like"
     },
     {
-      "id": "3200c1c6-abba-ee79-162b-51ae162efea5",
-      "postId": "ef99aa7e-a969-7951-e698-eed27d5f7131",
+      "id": "e716f983-f3c7-77db-ea3c-c4a33868b590",
+      "postId": "a1c0477e-a802-f9c9-40de-80fc999e7e8d",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "like"
+    },
+    {
+      "id": "0974756e-e199-ba4c-91fc-2a9b3aba959a",
+      "postId": "a1c0477e-a802-f9c9-40de-80fc999e7e8d",
       "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
       "state": "dislike"
     },
     {
-      "id": "5d5bccb9-e3ba-a2b3-a1ea-aa8dd6519bec",
-      "postId": "ef99aa7e-a969-7951-e698-eed27d5f7131",
-      "uid": 1,
+      "id": "dc600a7d-825d-8185-05de-f9dbe3cc6a2f",
+      "postId": "ea7bb79f-a05a-e4c2-42b3-9ef7efce1e26",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "state": "like"
+    },
+    {
+      "id": "3717c0f4-f320-3afa-00ed-3077f712c34a",
+      "postId": "1c89713c-686a-6b30-6256-f73705d0174b",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
       "state": "like"
     }
   ],
@@ -295,6 +301,34 @@
       "id": "e3e4eb96-34e0-5f71-dd55-929ae5fe98de",
       "postId": "2",
       "content": "test"
+    },
+    {
+      "author": "gogo@naver.com",
+      "uid": 1,
+      "id": "7d43f451-51fb-86bc-19db-95180b07da0d",
+      "postId": "2",
+      "content": "ㅅㅅㄷㄴㅅ"
+    },
+    {
+      "author": "toto@naver.com",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "id": "b4aea00d-1601-a94f-17ea-1fb6aa781e07",
+      "postId": "a1c0477e-a802-f9c9-40de-80fc999e7e8d",
+      "content": "111111"
+    },
+    {
+      "author": "toto@naver.com",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "id": "5199bc08-c130-2c88-edfa-fba2ab25e444",
+      "postId": "a1c0477e-a802-f9c9-40de-80fc999e7e8d",
+      "content": "testes"
+    },
+    {
+      "author": "toto@naver.com",
+      "uid": "828c9e5a-e9fd-6f72-dd64-5ac79b6fc9aa",
+      "id": "d5bd587e-9941-cf89-04d8-554183a095b0",
+      "postId": "ea7bb79f-a05a-e4c2-42b3-9ef7efce1e26",
+      "content": "tsteste"
     }
   ]
 }

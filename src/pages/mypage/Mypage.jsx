@@ -12,7 +12,7 @@ import {
   StDeleteImg,
 } from "./StyledMypage";
 import { useNavigate, useParams } from "react-router-dom";
-import { QueryClient, useMutation, useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import api from "../../axios/api";
 import { useSelector } from "react-redux";
 
@@ -21,6 +21,7 @@ function Mypage() {
   const { uid } = useParams();
   const navigate = useNavigate();
   const user = useSelector((state) => state.User);
+  const queryClient = useQueryClient();
 
   // 데이터 불러오기
   const {
@@ -61,7 +62,7 @@ function Mypage() {
     // 데이터 삭제 후 화면 바로 변경
     {
       onSuccess: () => {
-        QueryClient.invalidateQueries("posts");
+        queryClient.invalidateQueries("posts");
       },
     }
   );
