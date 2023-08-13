@@ -39,7 +39,6 @@ function Comment({ id }) {
       onSuccess: () => {
         setComment("");
         queryClient.invalidateQueries(["comments", id]);
-        // refetchComments(); // 새로운 댓글을 불러와 화면에 반영
       },
     }
   );
@@ -53,15 +52,9 @@ function Comment({ id }) {
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["comments", id]);
-        // refetchComments();
       },
     }
   );
-
-  // const refetchComments = async () => {
-  //   const response = await api.get(`/comments?postId=${id}`);
-  //   queryClient.setQueryData(["comments", id], response.data);
-  // };
 
   if (isLoading) {
     return <div>Loading...</div>;

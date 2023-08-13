@@ -71,15 +71,9 @@ function Detail() {
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["likes", id]);
-        // refetchLikes();
       },
     }
   );
-
-  // const refetchLikes = async () => {
-  //   const response = await api.get(`/likes?postId=${id}`);
-  //   queryClient.setQueryData(["likes", id], response.data);
-  // };
 
   // isLoading, isError
   if (isPostsLoading || isLikesLoading) {

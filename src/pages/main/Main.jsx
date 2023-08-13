@@ -99,12 +99,6 @@ function Main() {
               ))}
           </StCardContainer>
           <StContentTitle>Youtube</StContentTitle>
-          <StCardContainer>
-            <StCard>카드</StCard>
-            <StCard>카드</StCard>
-            <StCard>카드</StCard>
-            <StCard>카드</StCard>
-          </StCardContainer>
         </StMainContent>
       </StMainBody>
     </>

@@ -32,10 +32,10 @@ export default function Create() {
   const [isLowerOpen, setIsLowerOpen] = useState(false);
   const [selectedUpperOption, setSelectedUpperOption] = useState(null);
   const [selectedLowerOption, setSelectedLowerOption] = useState(null);
-  const [selectedFile, setSelectedFile] = useState(null);
   const [inputs, setInputs] = useState({
     title: "",
     content: "",
+    img: "",
   });
 
   // select바 action
@@ -77,7 +77,6 @@ export default function Create() {
       author: user.email,
       uid: user.id,
       id: uuid(),
-      attachment: selectedFile ? selectedFile.name : null,
     };
     if (!user.email) {
       alert("로그인이 필요합니다.");
@@ -167,19 +166,13 @@ export default function Create() {
         />
         <StFileBox>
           <StFileLink
-            value={selectedFile ? selectedFile.name : ""}
+            name="img"
+            value={inputs.imageLink}
             type="text"
-            placeholder="파일링크"
+            placeholder="이미지링크"
+            onChange={changeHandler}
           />
-          <StFileBtn htmlFor="attachment">첨부파일</StFileBtn>
-          <input
-            type="file"
-            id="attachment"
-            style={{ display: "none" }}
-            onChange={(e) => {
-              setSelectedFile(e.target.files[0]);
-            }}
-          />
+          <StFileBtn>첨부파일</StFileBtn>
         </StFileBox>
 
         <StCreateBtn>추가하기</StCreateBtn>

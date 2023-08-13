@@ -42,10 +42,10 @@ function Edit() {
   const [selectedLowerOption, setSelectedLowerOption] = useState(
     data.selectedLowerOption
   );
-  const [selectedFile, setSelectedFile] = useState(null);
   const [inputs, setInputs] = useState({
     title: data.title,
     content: data.content,
+    img: data.img,
   });
   // select바 action
   const handleUpperOptionClick = (option) => {
@@ -72,6 +72,7 @@ function Edit() {
         ...data,
         title: inputs.title,
         content: inputs.content,
+        img: inputs.img,
         selectedUpperOption,
         selectedLowerOption,
       };
@@ -161,19 +162,12 @@ function Edit() {
         />
         <StFileBox>
           <StFileLink
-            value={selectedFile ? selectedFile.name : ""}
+            name="img"
+            value={inputs.img}
             type="text"
-            placeholder="파일링크"
+            onChange={changeHandler}
           />
-          <StFileBtn htmlFor="attachment">첨부파일</StFileBtn>
-          <input
-            type="file"
-            id="attachment"
-            style={{ display: "none" }}
-            onChange={(e) => {
-              setSelectedFile(e.target.files[0]);
-            }}
-          />
+          <StFileBtn>첨부파일</StFileBtn>
         </StFileBox>
         <StEditBtn onClick={() => {}}>수정하기</StEditBtn>
       </StEditForm>
