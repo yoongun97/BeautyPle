@@ -30,11 +30,12 @@ export const StCardContainer = styled.div`
 export const StCard = styled.div`
   border: 0.1px solid #d9d9d9;
   box-shadow: 0 2.5px 2px 0 gray;
-  max-height: 350px;
+  max-height: 340px;
   max-width: 200px;
   margin: 15px;
   padding: 5px;
   cursor: pointer;
+  overflow: hidden;
 `;
 export const StCardImg = styled.img`
   width: 200px;
@@ -44,9 +45,8 @@ export const StCardInfo = styled.div``;
 export const StCardTitle = styled.span`
   font-size: 20px;
 `;
-export const StCardContent = styled.p``;
 export const StCardAuthor = styled.span`
   background-color: beige;
-  margin: auto 10px 10px;
+  margin: auto 10px 10px 0px;
   float: right;
 `;

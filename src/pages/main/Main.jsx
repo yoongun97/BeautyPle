@@ -13,7 +13,6 @@ import {
   StCardImg,
   StCardInfo,
   StCardTitle,
-  StCardContent,
   StCardAuthor,
 } from "./StyledMain";
 import { Link } from "react-router-dom";
@@ -67,7 +66,6 @@ function Main() {
                   <StCardImg src={item.img || noImage} alt="MainImg" />
                   <StCardInfo>
                     <StCardTitle>{item.title}</StCardTitle>
-                    <StCardContent>{item.content}</StCardContent>
                   </StCardInfo>
                   <StCardAuthor>{item.author}</StCardAuthor>
                 </StCard>
@@ -92,7 +90,6 @@ function Main() {
                   <StCardImg src={item.img || noImage} alt="MainImg" />
                   <StCardInfo>
                     <StCardTitle>{item.title}</StCardTitle>
-                    <StCardContent>{item.content}</StCardContent>
                   </StCardInfo>
                   <StCardAuthor>{item.author}</StCardAuthor>
                 </StCard>

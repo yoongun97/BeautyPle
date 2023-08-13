@@ -12,7 +12,6 @@ import {
   StCardImg,
   StCardInfo,
   StCardTitle,
-  StCardContent,
   StCardAuthor,
 } from "./StyledMain";
 import { useDispatch, useSelector } from "react-redux";
@@ -74,7 +73,6 @@ function Items() {
                 <StCardImg src={item.img || noImage} alt="MainImg" />
                 <StCardInfo>
                   <StCardTitle>{item.title}</StCardTitle>
-                  <StCardContent>{item.content}</StCardContent>
                 </StCardInfo>
                 <StCardAuthor>{item.author}</StCardAuthor>
               </StCard>

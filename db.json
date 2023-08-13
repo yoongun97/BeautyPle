@@ -1,8 +1,307 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "title": "내추럴 커버 파운데이션",
+      "content": "남성용으로 피부에 확실히 밀착되어 땀과 물 등에 의해 지워지지 않으며 필요한 부분을 제대로 커버해주는데 피부톤이 어두운사람이나 밝은 사람 가리지 않고 다양한 색상으로 원하는 색상을 고르기가 편해요. ",
+      "img": "https://www.obge.co.kr/img/main/best_visual/pc/best_visual_01_pc.jpg",
+      "selectedUpperOption": "제품추천",
+      "selectedLowerOption": "올인원",
+      "author": "jinny@naver.com",
+      "uid": "c552f40c-2647-1b67-a834-0cb61ca11e94",
+      "id": "35e5daff-e214-8e10-c521-40c590ca00f8"
+    },
+    {
+      "title": "프레쉬 모이스춰 립앤아이 리무버 ",
+      "content": "자극이 없고 눈에 통증이 없지만 세정 능력은 확실하기 때문에 예민한 사람들이 쓰시면 좋은 제품입니다. 화장 솜에 충분히 적셔 지워야 할 곳에 30~40초 정도 올려둔 후 살살 문지르시면 눈 아픈 것없이 금방 지우실 수 있을꺼예요",
+      "img": "https://image.oliveyoung.co.kr/uploads/images/goods/550/10/0000/0012/A00000012552503ko.jpg?l=ko",
+      "selectedUpperOption": "꿀팁공유",
+      "selectedLowerOption": "생활 꿀팁",
+      "author": "mingming@gmai.com",
+      "uid": "f66fa90f-c540-6f5c-cd4a-a99bd264582e",
+      "id": "d9f72fc6-b51f-50fb-7e62-694a0ebbda6b"
+    },
+    {
+      "title": "  엘리자베스 샤인 리치 올인원 틴트",
+      "content": "총 4가지 기능이 있는데 메이크업과 수분 케어의 효과를 볼 수 있으며 글로스와 립밤의 기능을 합친 틴트인데 여러 가지 예쁜 색상들이 있어서 그 중에 가장 마음에 드는 색상을 골라 구입하시면 됩니다. 하지만 일본에서 직배송을 시켜야한단 단점이 있습니다. ",
+      "img": "https://gd.image-gmkt.com/%ec%9d%bc%eb%b3%b8-%ec%a7%81%eb%b0%b0%ec%86%a1-%ec%97%98%eb%a6%ac%ec%9e%90%eb%b2%a0%ec%8a%a4-%ec%83%a4%ec%9d%b8-%eb%a6%ac%ec%b9%98-%ec%98%ac%ec%9d%b8%ec%9b%90-%ed%8b%b4%ed%8a%b8-06-%ed%81%ac%eb%9e%9c%eb%b2%a0%eb%a6%ac-%eb%a0%88%eb%93%9c/li/057/552/1667552057.g_350-w-et-pj_g.jpg",
+      "selectedUpperOption": "제품추천",
+      "selectedLowerOption": "기초화장",
+      "author": "yuni@gmai.com",
+      "uid": "e920e0bb-7e32-0763-f76e-7a4bf5bff8c0",
+      "id": "28115f67-2484-bbc3-a78c-f7f75d8619dd"
+    },
+    {
+      "title": "리틀 비티 모먼트 섀도우 #14",
+      "content": "할인 행사를 자주 하니 갖고 싶은 색상이 있어도 바로 사기 보다 조금 시간을 걸려도 할인 기간을 기다리시는건 어떠신가요? 예쁜 색상이 많아서 이 제품을 기본으로 다른 제품을 사시면 만족하실꺼예요 ",
+      "img": "https://image.oliveyoung.co.kr/uploads/images/goods/550/10/0000/0016/A00000016442402ko.jpg?l=ko",
+      "selectedUpperOption": "꿀팁공유",
+      "selectedLowerOption": "쇼핑 꿀팁",
+      "author": "juju@naver.com",
+      "uid": "b19a5a5e-f083-4d38-e8d2-9f153a69cf9d",
+      "id": "4de4242d-e4c5-a294-79e3-fd7119a9fc22"
+    },
+    {
+      "title": "입튼 맨-파워액티브 올인원 제로",
+      "content": "저자극 테스트를 거친 제품으로 민감성에게도 굳!\n은은한 허브향으로 취향타지 않고 산뜻하게 사용하기 좋아",
+      "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MThfMTU1%2FMDAxNjUyODU1Njg1NzAw.JGiO_vZpAYFHaJNhxWdMMlmtLrJzjmbMaevTEBcttXkg.KVwmYfSG6QLFcarzRcZpPqyOm6azyf4lehZBH7qnJtUg.JPEG.daonida%2FKakaoTalk_20220518_152840268.jpg&type=a340",
+      "selectedUpperOption": "제품추천",
+      "selectedLowerOption": "올인원",
+      "author": "beauty@naver.com",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "id": "4d06ba6e-a208-ac0b-d6d3-fdb58661fa53"
+    },
+    {
+      "title": "온리 포 맨 토너 로션 세트",
+      "content": "산뜻하게 피부에 흡수되어 피부를 케어해 주는 로션 및 촉촉함을 선사하는 스킨케어 토너\n토너와 로션으로 구성된 실용적인 남성화장품 세트로 미백과 주름개선 효과 등\n",
+      "img": "https://promotioncoup.com/wp-content/uploads/2023/02/1.-AHC-%EC%98%A8%EB%A6%AC%ED%8F%AC%EB%A7%A8-%EC%8A%A4%ED%82%A8%EC%BC%80%EC%96%B4.gif",
+      "selectedUpperOption": "제품추천",
+      "selectedLowerOption": "기초화장",
+      "author": "beauty@naver.com",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "id": "9250ceb2-7128-e60e-5241-8f2877029b81"
+    },
+    {
+      "title": "1일 1팩 효과 있을까?",
+      "content": " 피부는 사람마다 천차만별이기 때문에 효과를 단언할 수는 없어요. 게다가 요즘은 수분 보충, 미백, 주름 개선 등 다양한 기능의 마스크팩이 나오고 있는 추세라 더욱 그렇죠. 1일 1팩은 단순히 말해 잘 맞는 사람에게는 효과적이고 그렇지 않은 사람에게는 시간과 돈을 버리는 일이라고 얘기할 수 있어요.\n1일 1팩으로 최대한의 효과를 볼 수 있는 방법과 주의점\n1. 꼼꼼한 세안 후 사용한다\n2. 권장 사용 시간을 넘겨 사용하지 않는다\n3. 보관에 주의한다\n4. 뜯기 전 팩을 주물러 준다\n5. 기능성 마스크팩은 사용에 주의한다\n",
+      "img": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FCyGYu%2FbtqYnmy6pWM%2FCGXZ4Gb3iWGOI9XpdEvQek%2Fimg.jpg",
+      "selectedUpperOption": "꿀팁공유",
+      "selectedLowerOption": "생활 꿀팁",
+      "author": "beauty@naver.com",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "id": "4bc76a84-ac4d-b89e-e2b4-15dcd44508b7"
+    },
+    {
+      "title": "화장품 구매 시 실패하지 않는 꿀팁",
+      "content": "화장품을 구매할 때 어떤 부분을 중점으로 보고 구매하면 실패할 확률이 적을까요\n바로 성분입니다.같은 성분이라도 누구에겐 맞고 누구에겐 맞지 않을 수 있는 거죠\n나에게 맞고 필요한 성분을 알고 있는 채로 그 성분이 들어있는 화장품을 구매하게 되면\n화장품을 구매했을 때 실패할 확률이 적어집니다.\n지성피부는 피부에 막을 형성해서 모공을 막는 성분들을 피해야 하는데요\n코코넛 오일, 시어버터, 옥시벤존, 파라벤 등을 피해야 합니다.\n알코올 같은 경우는 수분을 증발시키기 때문에 건성피부에게는 좋지 않고,\n피부에 자극을 줄 수 있는 굳은 뒤 떼어내는 필오프팩은 피하는 것이 좋습니다\n알코올, 머드, 멘톨, 페퍼민트\n",
+      "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA5MjlfMyAg%2FMDAxNjAxMzIwNDY5NDEw.dd9kFVLgm58fI8xhEAw8HBv9lJl_-nt9Oue9BbiXfcsg.AWaV3LApNxcC4kXmBC-0vD0TgawP972cE-Z7J5XTwtAg.JPEG.water3545%2F%25BA%25ED%25B7%25CE%25B1%25D71.jpg&type=a340",
+      "selectedUpperOption": "꿀팁공유",
+      "selectedLowerOption": "쇼핑 꿀팁",
+      "author": "beauty@naver.com",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "id": "07250eb3-a247-c721-32b2-1fa12a8b6f95"
+    },
+    {
+      "title": "랩 시리즈-프로 LS 올인원 훼이스 트리트먼트",
+      "content": "피부보습과 유분조절에 탁월!\n기름기를 잘 잡아주고 향도 진하지 않은 은은한 에센스 향이라 호불호 갈리지 않아!",
+      "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20160209_108%2Ftjdbs0323_1454976737339pdlGz_JPEG%2F%25B7%25A6%25BD%25C3%25B8%25AE%25C1%25EE_%25284%2529.jpg&type=a340",
+      "selectedUpperOption": "제품추천",
+      "selectedLowerOption": "올인원",
+      "author": "hehe@naver.com",
+      "uid": "06b78702-3ebc-a302-1ff0-3c0a31984d7e",
+      "id": "02e41b21-1d85-8644-5287-5e360f982543"
+    },
+    {
+      "title": "이니스프리 미네랄 메이크업 베이스",
+      "content": "미네랄 메이크업 베이스는\n1호 복숭아피치 / 2호 바닐라그린 / 3호 크림퍼플\n​총 3가지로 구성 되어 있어요\n\n​1호는 생기있는 피부표현,\n2호는 붉은피부톤을 화사하게(여드름,울글불긋),\n3호는 노랗고 칙칙한 피부표현을 원하시는 분들께서 구매하시면 되요\n\n\n",
+      "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20190714_36%2Fkkine82_1563110605312WilKQ_JPEG%2F471343941844911_268505315.jpg&type=a340",
+      "selectedUpperOption": "제품추천",
+      "selectedLowerOption": "기초화장",
+      "author": "hehe@naver.com",
+      "uid": "06b78702-3ebc-a302-1ff0-3c0a31984d7e",
+      "id": "9b36f8ec-755f-0632-8964-f4be123078ab"
+    }
+  ],
   "login": [],
-  "users": [],
-  "tokens": [],
-  "likes": [],
-  "comments": []
+  "users": [
+    {
+      "email": "jinny@naver.com",
+      "password": "$2a$10$nkjRx/znPDUXdmS88DS1TuiimNAgFpqQE7X1LmXulXvkvnHHGXRh2",
+      "id": "c552f40c-2647-1b67-a834-0cb61ca11e94"
+    },
+    {
+      "email": "mingming@gmai.com",
+      "password": "$2a$10$5ih1DJhIgggnrIhTp9zMl.R4roHMIYgHfmHoDGVL6UuTVEU4JQRtm",
+      "id": "f66fa90f-c540-6f5c-cd4a-a99bd264582e"
+    },
+    {
+      "email": "yuni@gmai.com",
+      "password": "$2a$10$BjgSctosfCsIF9/dTCr8JuhwD3F6LHi20LsVsdG5CBfjNoRnyHyqy",
+      "id": "e920e0bb-7e32-0763-f76e-7a4bf5bff8c0"
+    },
+    {
+      "email": "juju@naver.com",
+      "password": "$2a$10$zrZ9WC9jE3F8ObNo3YJb5.TTFYOmsid/inKZDMWrpgHJDau937wpS",
+      "id": "b19a5a5e-f083-4d38-e8d2-9f153a69cf9d"
+    },
+    {
+      "email": "beauty@naver.com",
+      "password": "$2a$10$b0JJe5P9mDKwOSmCFVa6CemOf6rApklT8AKlJC29IDfrtNtVAYH2i",
+      "id": "e561d5a7-d3fb-acf3-e6d0-9b004987320c"
+    },
+    {
+      "email": "hehe@naver.com",
+      "password": "$2a$10$qtoHsDD0HqWZkTBTZC905eUGW9BGpbEcWc7FMRHWzYb7PuBYr4F5K",
+      "id": "06b78702-3ebc-a302-1ff0-3c0a31984d7e"
+    }
+  ],
+  "likes": [
+    {
+      "id": "84cb64b5-63f3-5d3c-18e2-0b5652336d2e",
+      "postId": "35e5daff-e214-8e10-c521-40c590ca00f8",
+      "uid": "f66fa90f-c540-6f5c-cd4a-a99bd264582e",
+      "state": "like"
+    },
+    {
+      "id": "67642a95-52d8-10be-6d5e-6aff7cd737af",
+      "postId": "d9f72fc6-b51f-50fb-7e62-694a0ebbda6b",
+      "uid": "e920e0bb-7e32-0763-f76e-7a4bf5bff8c0",
+      "state": "dislike"
+    },
+    {
+      "id": "f639031b-73e3-b3d8-77e5-72e706c7729e",
+      "postId": "35e5daff-e214-8e10-c521-40c590ca00f8",
+      "uid": "e920e0bb-7e32-0763-f76e-7a4bf5bff8c0",
+      "state": "dislike"
+    },
+    {
+      "id": "b67d6b22-3d70-e3f4-f02a-7ddf011c414f",
+      "postId": "d9f72fc6-b51f-50fb-7e62-694a0ebbda6b",
+      "uid": "b19a5a5e-f083-4d38-e8d2-9f153a69cf9d",
+      "state": "like"
+    },
+    {
+      "id": "638bf19a-cb9b-1229-b703-bd5c04a15dc1",
+      "postId": "28115f67-2484-bbc3-a78c-f7f75d8619dd",
+      "uid": "b19a5a5e-f083-4d38-e8d2-9f153a69cf9d",
+      "state": "like"
+    },
+    {
+      "id": "449dfc90-fd39-38d3-9142-7c8b88be1c61",
+      "postId": "4de4242d-e4c5-a294-79e3-fd7119a9fc22",
+      "uid": "f66fa90f-c540-6f5c-cd4a-a99bd264582e",
+      "state": "like"
+    },
+    {
+      "id": "a676795c-5204-c2cb-4e79-7879029548f3",
+      "postId": "28115f67-2484-bbc3-a78c-f7f75d8619dd",
+      "uid": "c552f40c-2647-1b67-a834-0cb61ca11e94",
+      "state": "dislike"
+    },
+    {
+      "id": "c10669c6-8c71-7c22-37d1-5d9215f7bf23",
+      "postId": "4de4242d-e4c5-a294-79e3-fd7119a9fc22",
+      "uid": "c552f40c-2647-1b67-a834-0cb61ca11e94",
+      "state": "dislike"
+    },
+    {
+      "id": "ea18d891-0d62-ae16-8ff8-fe6c7107487d",
+      "postId": "28115f67-2484-bbc3-a78c-f7f75d8619dd",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "state": "like"
+    },
+    {
+      "id": "1a3a6d95-8c2c-3ad7-70c5-2855e6a7d157",
+      "postId": "35e5daff-e214-8e10-c521-40c590ca00f8",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "state": "like"
+    },
+    {
+      "id": "ef88ef71-0359-cef1-1250-cba0b8c6bc4c",
+      "postId": "4de4242d-e4c5-a294-79e3-fd7119a9fc22",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "state": "dislike"
+    },
+    {
+      "id": "6885763d-7ed2-67b6-13e8-8ff0b987665a",
+      "postId": "d9f72fc6-b51f-50fb-7e62-694a0ebbda6b",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "state": "like"
+    },
+    {
+      "id": "c6e1d5e0-4b57-31d5-ac42-a0f8f21cadcb",
+      "postId": "9250ceb2-7128-e60e-5241-8f2877029b81",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "state": "like"
+    },
+    {
+      "id": "107571f7-1752-8f0c-9467-1ff656cf4e98",
+      "postId": "4d06ba6e-a208-ac0b-d6d3-fdb58661fa53",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "state": "like"
+    },
+    {
+      "id": "75b6a5d5-5528-3a8d-1a6f-83a5ba5c95a8",
+      "postId": "07250eb3-a247-c721-32b2-1fa12a8b6f95",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "state": "like"
+    },
+    {
+      "id": "c0ce1474-8cc8-b6eb-4149-499b0a0c6289",
+      "postId": "4bc76a84-ac4d-b89e-e2b4-15dcd44508b7",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "state": "dislike"
+    }
+  ],
+  "comments": [
+    {
+      "author": "mingming@gmai.com",
+      "uid": "f66fa90f-c540-6f5c-cd4a-a99bd264582e",
+      "id": "60f7b22d-b5a7-4a9d-5b1b-8ec58d29b483",
+      "postId": "35e5daff-e214-8e10-c521-40c590ca00f8",
+      "content": "써보니까 정말 좋아요"
+    },
+    {
+      "author": "yuni@gmai.com",
+      "uid": "e920e0bb-7e32-0763-f76e-7a4bf5bff8c0",
+      "id": "155990c0-4672-5e65-3436-ed9b6a64e43d",
+      "postId": "d9f72fc6-b51f-50fb-7e62-694a0ebbda6b",
+      "content": "가격 대비 가성비는 좋지 않은 것 같아요"
+    },
+    {
+      "author": "yuni@gmai.com",
+      "uid": "e920e0bb-7e32-0763-f76e-7a4bf5bff8c0",
+      "id": "d4f3dc43-6273-589e-8f4d-f35357bbd708",
+      "postId": "35e5daff-e214-8e10-c521-40c590ca00f8",
+      "content": "개인적으로 그렇게 좋다는 생각은 안들었어요 "
+    },
+    {
+      "author": "juju@naver.com",
+      "uid": "b19a5a5e-f083-4d38-e8d2-9f153a69cf9d",
+      "id": "6f924eb3-b4c5-5c7d-edb8-97270de2897f",
+      "postId": "d9f72fc6-b51f-50fb-7e62-694a0ebbda6b",
+      "content": "순해서 정말 좋았어요 "
+    },
+    {
+      "author": "juju@naver.com",
+      "uid": "b19a5a5e-f083-4d38-e8d2-9f153a69cf9d",
+      "id": "1e16fb01-b1b0-b4ec-df1f-12c8971ca12b",
+      "postId": "28115f67-2484-bbc3-a78c-f7f75d8619dd",
+      "content": "색깔이 너무 이뻐요 "
+    },
+    {
+      "author": "mingming@gmai.com",
+      "uid": "f66fa90f-c540-6f5c-cd4a-a99bd264582e",
+      "id": "e747accc-9394-f867-07cd-3b384969d909",
+      "postId": "4de4242d-e4c5-a294-79e3-fd7119a9fc22",
+      "content": "색깔이 너무 예뻐서 여러 개를 갖고 싶어요 "
+    },
+    {
+      "author": "jinny@naver.com",
+      "uid": "c552f40c-2647-1b67-a834-0cb61ca11e94",
+      "id": "bad363d3-3d14-3968-623e-82b52ba70866",
+      "postId": "28115f67-2484-bbc3-a78c-f7f75d8619dd",
+      "content": "다른 대체제품들이 너무 많은 것 같아요 "
+    },
+    {
+      "author": "jinny@naver.com",
+      "uid": "c552f40c-2647-1b67-a834-0cb61ca11e94",
+      "id": "bbd8799a-8bad-d1f6-79ce-c0bdc7e54e81",
+      "postId": "4de4242d-e4c5-a294-79e3-fd7119a9fc22",
+      "content": "그렇게 끌리지는 않습니다"
+    },
+    {
+      "author": "beauty@naver.com",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "id": "72c550f0-5431-00a4-cd39-db2c5884a7ca",
+      "postId": "35e5daff-e214-8e10-c521-40c590ca00f8",
+      "content": "너무 좋아요"
+    },
+    {
+      "author": "beauty@naver.com",
+      "uid": "e561d5a7-d3fb-acf3-e6d0-9b004987320c",
+      "id": "f012ae0b-a8af-b727-2925-46545af831b1",
+      "postId": "9250ceb2-7128-e60e-5241-8f2877029b81",
+      "content": "써보니까 좋아요. 추천 감사합니다."
+    }
+  ]
 }
