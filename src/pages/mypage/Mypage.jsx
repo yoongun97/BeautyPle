@@ -14,11 +14,13 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import { QueryClient, useMutation, useQuery } from "react-query";
 import api from "../../axios/api";
+import { useSelector } from "react-redux";
 
 function Mypage() {
   const [selectedButton, setSelectedButton] = useState("mypost");
   const { uid } = useParams();
   const navigate = useNavigate();
+  const user = useSelector((state) => state.User);
 
   // 데이터 불러오기
   const {
@@ -34,6 +36,7 @@ function Mypage() {
     },
     {
       select: (data) => data.reverse(),
+      enabled: !!user.email,
     }
   );
 
@@ -95,8 +98,8 @@ function Mypage() {
       <StListContainer>
         {selectedButton === "mypost"
           ? postsData
-              .filter((item) => item.uid == uid)
-              .map((item) => (
+              ?.filter((item) => item.uid == uid)
+              ?.map((item) => (
                 <StCard key={item.id}>
                   <StTextbox
                     onClick={() => {
@@ -119,10 +122,10 @@ function Mypage() {
                 </StCard>
               ))
           : postsData
-              .filter((item) =>
+              ?.filter((item) =>
                 likedData.some((liked) => liked.postId === item.id)
               )
-              .map((item) => (
+              ?.map((item) => (
                 <StCard key={item.id}>
                   <StTextbox
                     onClick={() => {

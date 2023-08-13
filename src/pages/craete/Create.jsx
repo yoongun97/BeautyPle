@@ -79,8 +79,10 @@ export default function Create() {
       id: uuid(),
       attachment: selectedFile ? selectedFile.name : null,
     };
-
-    if (inputs.title.trim() === "") {
+    if (!user.email) {
+      alert("로그인이 필요합니다.");
+      navigate("/login");
+    } else if (inputs.title.trim() === "") {
       alert("제목을 입력하세요");
     } else if (inputs.content.trim() === "") {
       alert("내용을 입력하세요");
