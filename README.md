@@ -1,74 +1,97 @@
-# BeautyPle
+# React 심화 프로젝트 : BeautyPle(Beauty Platform)
 
-=======
+> **Create React App Project** <br/> **개발기간: 2023.08.07 ~ 2023.08.14**
 
-# Getting Started with Create React App
+## 프로젝트 소개
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 사용자들이 제품을 추천, tip을 제공하고 다른 사용자들이 댓글을 작성하고 평가함으로써 정보를 공유합니다.
 
-## Available Scripts
+## 화면 구성
 
-In the project directory, you can run:
+|                                                      메인 페이지                                                       |                                                      리스트 페이지                                                       |
+| :--------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
+| ![image](https://github.com/yoongun97/BeautyPle/assets/108172921/be54fb9f-67e1-4a9c-8a1e-acb4cb3cd33f)                 |                     ![image](https://github.com/yoongun97/BeautyPle/assets/108172921/bc8ad181-5a00-44a0-9e0f-d646418ebd61)   |
+|                                                    로그인                                                           |                                                    상세 페이지                                                                |
+|            ![image](https://github.com/yoongun97/BeautyPle/assets/108172921/52987c76-a66a-481e-9a4f-f6aa6c284b10) |   ![image](https://github.com/yoongun97/BeautyPle/assets/108172921/34cf4c06-08cc-40d3-b620-47ca6a288152)|
+|                                                    포스트 작성                                                          |                                                    마이 페이지                                                                |
+|                ![image](https://github.com/yoongun97/BeautyPle/assets/108172921/79b8ed09-f2f9-4ea3-abff-aef0bfe185f6)    |           ![image](https://github.com/yoongun97/BeautyPle/assets/108172921/a6aef8e9-c606-480d-a602-aa7155b4ecb9)            |
+|                                                    수정 페이지                                                         |                                                   카테고리 페이지                                                 |
+|                ![image](https://github.com/yoongun97/BeautyPle/assets/108172921/d5b552a7-9463-43ca-a822-079fbc039d4d)    |           ![image](https://github.com/yoongun97/BeautyPle/assets/108172921/aba7f63f-7fce-400a-84ee-71eb88ef209b)          |
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 주요 기능
 
-### `yarn test`
+### 회원정보 관리
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 로그인, 회원가입
 
-### `yarn build`
+- 본인이 정한 이메일로 회원가입을 할 수 있습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 리스트 페이지
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 포스트 리스트 불러오기
 
-### `yarn eject`
+- 글 리스트를 카테고리 별로 보여줍니다.
+- 더보기 버튼을 통해 상위 카테고리 별 포스트를 볼 수 있습니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### 카테고라이징
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 카테고리바를 통해 상위카테고리, 하위 카테고리별 포스트를 필터링해서 볼 수 있습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 상세 페이지
 
-## Learn More
+#### 포스트 상세정보 불러오기
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 사진, 글 제목, 내용을 볼 수 있습니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### 추천, 비추천 버튼
 
-### Code Splitting
+- 추천, 비추천 버튼을 통해 게시물에 본인의 의견을 표시할 수 있습니다.
+- 게시물 별 추천, 비추천 수를 보여주어 게시물의 신뢰도를 확인할 수 있습니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### 댓글 작성
 
-### Analyzing the Bundle Size
+- 게시물 별로 댓글을 통해 본인의 의견을 제시할 수 있습니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### 마이 페이지
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### 작성한 글 목록 불러오기
 
-### Advanced Configuration
+- 본인이 작성한 글 목록을 볼 수 있습니다.
+- 본인이 작성한 글을 삭제할 수 있습니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### 추천한 글 목록 불러오기
 
-### Deployment
+- 리스트페이지에서 추천 버튼를 눌렀던 포스트 목록을 불러올 수 있습니다.
+- 카드를 눌러 해당 게시물의 상세페이지로 이동할 수 있습니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## API 명세서
+
+기능 | URL | Method | request | response
+-----|------|------|-------|------
+로그인 |/api/login | POST | {<br> email: string,  <br> password: string,  <br>  } | { <br> uid, <br> email,  <br> }
+회원가입 |/api/signup | POST | {<br> id: string,  <br> email: string,  <br> password: string,  <br> } | -
+마이페이지(작성  목록) | /api/mypage/:uid | GET | {<br> uid:string <br> },| posts: { <br> postId, <br> postTitle, <br> postContent, <br>}
+마이페이지(추천 목록) | /api/mypage/:uid | GET | likes :{ <br> userId: string, <br> state:string, <br> postId:string, <br> } <br> posts: { <br> postId <br> } <br> | posts: { <br> postId, <br> postTitle, <br> postContent, <br> } 
+리스트 조회 | /api/posts | GET | posts: { <br>selectedUpperOption <br> } | posts: {<br>postTitle,<br>postImg,<br>author<br>}
+카테고라이징 | /api/items, <br> /api/tips | GET |posts:{<br>selectedLowerOption<br>} | posts: {<br>postTitle,<br>postImg,<br>author<br>}
+포스트 조회 | /api/detail/:postId | GET | posts: {<br>postId:string,<br>} | posts: <br>postTitle,<br>postImg,<br>postContent<br>}
+포스트 추가 | /api/posts | POST |posts:{<br>postTitle:string,<br>postImg:string,<br>postContent: string,<br>author:user.email,<br>uid:user.id,<br>selectedUpperOption: string,<br>selectedLowerOption:string,<br>id:string<br>}|-
+포스트 삭제 | /api/posts/:postId | DELETE | posts:{<br>postId:string, <br>uid:string<br>} | -
+포스트 수정 | /api/posts/:postId | PATCH |posts:{<br>postTitle:string,<br>postImg:string,<br>postContent: string,<br>uid:user.id,<br>selectedUpperOption: string,<br>selectedLowerOption:string,<br>id:string<br>} | posts: { <br> postTitle,<br>postImg<br>postContent<br>selectedUpperOption,<br>selectedLowerOption<br>
+추천 조회 | /api/likes | GET | likes: {<br>postId:string,<br>uid:string,<br>state:string<br>} | likes:{<br>uid<br>}
+추천 추가 | /api/likes | POST | likes: {<br>postId:string,<br>uid:string,<br>state:string<br>} | -
+추천 삭제 | /api/likes | DELETE | likes: {<br>postId:string,<br>uid:string,<br>state:string<br>} | -
+댓글 추가 | /api/comments | POST |  { <br> author:user.email,<br>uid:user.id<br>id:string,<br>postId,<br>content:string,<br>} | comments: {<br>author,<br>content,<br>}
+댓글 삭제 | /api/comments | DELETE| comments:{<br>uid:user.id<br>id,<br>} | -
+
+
